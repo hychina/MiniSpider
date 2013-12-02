@@ -12,8 +12,8 @@ class Spider(threading.Thread):
                  max_retry_count=5, timeout=5, fetch_interval=1,
                  batch_size=0, batch_interval=0):
         threading.Thread.__init__(self, name=thread_name)
-        self.log('initializing ...')
         logging.basicConfig(filename='spider.log', level=logging.DEBUG)
+        self.log('initializing ...')
         self.urls = Queue.LifoQueue()
         [self.urls.put(url) for url in urls]
         self.html_pages = Queue.LifoQueue()

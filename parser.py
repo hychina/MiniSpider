@@ -62,11 +62,9 @@ class IcibaParser(Parser):
         if self.url_pattern.match(url) is None:
             new_urls = self.parse_urls(html)
             if new_urls is not None:
-                print '{0} new pages found ...'.format(len(new_urls))
+                print '{0} new pages found in {0} ...'.format(len(new_urls), url)
                 all_urls_file = open(os.path.join(self.dest, 'allurls'), 'a')
                 for url in new_urls:
                     self.add_url(url)
                     all_urls_file.write(url + '\n')
                 all_urls_file.close()
-            else:
-                print 'no more pages ...'
