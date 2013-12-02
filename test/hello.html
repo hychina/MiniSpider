@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>爱词霸质量反馈</title>
+		<link href="static/css/css.css" rel="stylesheet" type="text/css" />
+				
+	</head>
+	<script>
+		function reload_img() {
+			document.getElementById('Vcode').src = "?c=authcode&s=" + Math.random();
+		}
+	</script>
+	<body>
+		<div id="t">
+			<div class="content">
+				<h1 id="ciba"><a href="http://www.iciba.com">金山词霸 </a></h1>
+				<div class="link">
+					<a href="http://www.iciba.com">爱词霸首页</a>
+				</div>
+			</div>
+		</div>
+		<div id="w">
+			<div class="content">
+				<div class="feedback">
+					<table style="width: 700px; height: 50px;" align="center" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr>
+								<td><font size="-1">非常抱歉，来自您ip的请求异常频繁，为了保护其他用户的正常访问，只能暂时禁止您目前的访问。
+									<br>
+									如果您频繁碰到这样的问题，请您删除浏览器中iciba.com的cookie再尝试访问，也可以联系
+									<br>
+									我们。<a href="http://support.iciba.com/feedback/write.php?id=4" target="_blank">反馈</a>
+									<br>
+									对于给您带来的不便我们深表歉意，希望您继续支持爱词霸。
+									<p>
+										需要继续访问，请输入四位字母验证码
+								</font></td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="border: 1px solid rgb(208, 223, 244); width: 500px; height: 150px;" align="center" cellpadding="0" cellspacing="0">
+						<tbody>
+							<form action="?c=redirect" method="post">
+								<tr>
+									<td align="center">
+									<input name="checkcode" maxlength=4>
+									<a href="javascript:reload_img()"><img src="?c=authcode" alt="" align="absmiddle" border="0" height="30" width="80" id="Vcode"></a></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 180px;" valign="top">
+									<input value=" 提 交 " type="submit">
+									</td>
+								</tr>
+						</tbody>
+						</form>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="b">
+			<p>
+				<a href="http://www.iciba.com">爱词霸首页</a>
+			</p>
+			<p id="cr">
+				&copy; 2012 金山软件  京ICP备06025896号
+			</p>
+		</div>
+	</body>
+</html>
