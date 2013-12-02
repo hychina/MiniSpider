@@ -16,12 +16,12 @@ def main():
     #with open('../data/iciba/allurls', 'w') as file_:
     #    file_.write('\n'.join(iciba_urls))
 
-    with open('../data/iciba/allurls', 'r') as file_:
+    with open('./data/iciba/allurls', 'r') as file_:
         iciba_all_urls = file_.read().strip().split('\n')
-    with open('../data/iciba/fetchedurls', 'r') as file_:
+    with open('./data/iciba/fetchedurls', 'r') as file_:
         iciba_fetched_urls = set(file_.read().strip().split('\n'))
 
-    iciba_dest = '../data/iciba/'
+    iciba_dest = './data/iciba/'
     iciba_urls = [url for url in iciba_all_urls if url not in iciba_fetched_urls]
     iciba_rejection_msg = '非常抱歉，来自您ip的请求异常频繁，为了保护其他用户的正常访问，只能暂时禁止您目前的访问。'
 

@@ -33,7 +33,7 @@ class Parser:
 class IcibaParser(Parser):
     def __init__(self, spider, dest):
         Parser.__init__(self, spider, dest)
-        self.url_pattern = re.compile(r'(http://dj.iciba.com/.*?-2-)([0-9]+)(\.html)')
+        self.url_pattern = re.compile(r'(http://dj.iciba.com/.*?-[0-9]+-)([0-9]+)(\.html)')
 
     def parse_urls(self, html):
         soup = BeautifulSoup(html)
@@ -49,8 +49,11 @@ class IcibaParser(Parser):
         last_page_number = int(last_page_anchor.string)
         last_page_href = last_page_anchor['href']
 
-        return [self.url_pattern.sub(r'\g<1>{0}\g<3>'.format(n), last_page_href)
-                for n in xrange(2, last_page_number + 1)]
+        if self.url_pattern.match(last_page_href) is not None:
+            return [self.url_pattern.sub(r'\g<1>{0}\g<3>'.format(n), last_page_href)
+                    for n in xrange(2, last_page_number + 1)]
+        else:
+            return None
 
     def parse(self):
         url, html = self.get_html_page()
@@ -59,9 +62,11 @@ class IcibaParser(Parser):
         if self.url_pattern.match(url) is None:
             new_urls = self.parse_urls(html)
             if new_urls is not None:
+                print '{0} new pages found ...'.format(len(new_urls))
                 all_urls_file = open(os.path.join(self.dest, 'allurls'), 'a')
                 for url in new_urls:
                     self.add_url(url)
                     all_urls_file.write(url + '\n')
+                all_urls_file.close()
             else:
                 print 'no more pages ...'
