@@ -11,8 +11,8 @@ class Spider(threading.Thread):
     def __init__(self, thread_name, urls=[], rejection_msg=None,
                  max_retry_count=5, timeout=5, fetch_interval=1,
                  batch_size=0, batch_interval=0):
-        self.log('initializing ...')
         threading.Thread.__init__(self, name=thread_name)
+        self.log('initializing ...')
         logging.basicConfig(filename='spider.log', level=logging.DEBUG)
         self.urls = Queue.LifoQueue()
         [self.urls.put(url) for url in urls]
@@ -72,5 +72,10 @@ Gecko/20080404 (FoxPlus) Firefox/2.0.0.14'
             finally:
                 num_fetches += 1
                 if num_fetches == self.batch_size:
+                    self.log('start waiting ...')
+                    start_time = time.time()
                     time.sleep(self.batch_interval)
+                    end_time = time.time()
+                    self.log('stop waiting ...')
+                    self.log('waited {0} seconds ...'.format(end_time - start_time))
                     num_fetches = 0

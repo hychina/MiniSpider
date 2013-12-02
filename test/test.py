@@ -27,7 +27,9 @@ def main():
 
     iciba_spider = Spider(urls=iciba_urls,
                           thread_name='iciba',
-                          rejection_msg=iciba_rejection_msg)
+                          rejection_msg=iciba_rejection_msg,
+                          batch_size=10,
+                          batch_interval=10)
     iciba_parser = parser.IcibaParser(iciba_spider, iciba_dest)
     parser_manager = parser.ParserManager(iciba_parser)
 
