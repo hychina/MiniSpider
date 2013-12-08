@@ -40,7 +40,6 @@ class Downloader(threading.Thread):
         DataStore.insert(database=self.database,
                          table='pages',
                          values=(url, html_page))
-        pass
 
     def wait(self, interval):
         log(self.name, 'start waiting ...')

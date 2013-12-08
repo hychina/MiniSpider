@@ -17,7 +17,7 @@ class Spider():
 
         DataStore.create(database=self.database,
                          table='pages',
-                         cols='')
+                         cols=[('url', 'text'), ('html', 'text')])
 
         self.downloaders = [Downloader(spider_config=spider_config,
                                        thread_name='{}{}'.format(self.spider_name, n),
@@ -34,3 +34,5 @@ class Spider():
     def run(self):
         for d in self.downloaders:
             d.start()
+        for d in self.downloaders:
+            d.join()
