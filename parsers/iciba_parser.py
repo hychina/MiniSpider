@@ -1,12 +1,12 @@
 from logger import log
 from bs4 import BeautifulSoup
-from database import Database
 import re
 
 class IcibaParser():
     def __init__(self):
         self.url_pattern = re.compile(r'(http://dj.iciba.com/.*?-[0-9]+-)([0-9]+)(\.html)')
         self.name = 'iciba'
+        self.en_pattern = re.compile(r'[0-9]+\.[ |\t]*(.*)')
 
     def __str__(self):
         return self.name
@@ -42,6 +42,7 @@ class IcibaParser():
             en_div = sentence_div.find('dt')
             cn_div = sentence_div.find('dd')
             en = ''.join([s for s in en_div.strings]).strip()
+            en = self.en_pattern.search(en).group(1)
             cn = ''.join([s for s in cn_div.strings]).strip()
             # en and cn are already decoded to unicode by bs4
             self.database.insert(table='sentences', values=(en, cn))

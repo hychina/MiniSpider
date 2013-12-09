@@ -3,26 +3,28 @@ from bs4 import UnicodeDammit
 import threading
 import urllib2
 import time
+import random
 
 class Downloader(threading.Thread):
-    def __init__(self, spider_config, thread_name, urls, parser, database):
+    def __init__(self, spider_config, thread_name, urls, user_agents, parser, database):
         threading.Thread.__init__(self, name=thread_name)
 
-        self.parser = parser
-        self.urls = urls
         self.rejection_msg = spider_config.get('rejection_msg', None)
         self.max_retry = int(spider_config.get('max_retry', 5))
         self.timeout = int(spider_config.get('timeout', 5))
         self.fetch_interval = int(spider_config.get('fetch_interval', 1))
-        self.batch_size = int(spider_config.get('batch_size', 1000))
-        self.batch_interval = int(spider_config.get('batch_interval', 10*60))
-        self.user_agent = spider_config.get('user_agent', None)
+        self.batch_size = int(spider_config.get('batch_size', 100))
+        self.batch_interval = int(spider_config.get('batch_interval', 100))
+
+        self.parser = parser
+        self.urls = urls
+        self.user_agents = user_agents
         self.database = database
 
     def fetch(self, url):
         request = urllib2.Request(url)
-        if self.user_agent is not None:
-            request.add_header('User-Agent', self.user_agent)
+        user_agent = random.choice(self.user_agents)
+        request.add_header('User-Agent', user_agent)
         fail_count = 0
         while True:
             try:
@@ -58,7 +60,7 @@ class Downloader(threading.Thread):
             try:
                 html = self.fetch(url)
             except Exception as e:
-                log(self.name, 'fail:{0}:{1}'.format(url, e))
+                log(self.name, 'fail:{0} {1}'.format(url, e))
             else:
                 if self.rejection_msg is not None and self.rejection_msg not in html:
                     log(self.name, 'success:{0}'.format(url))
