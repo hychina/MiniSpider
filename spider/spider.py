@@ -3,21 +3,17 @@
 from logger import log
 from Queue import LifoQueue
 from downloader import Downloader
-from datastore import DataStore
+from database import Database
 
 class Spider():
-    def __init__(self, spider_config, parser):
+    def __init__(self, spider_name, spider_config, parser, database):
+        log(spider_name, 'initializing ...')
+
+        self.spider_name = spider_name
+        self.database = database
         self.urls = LifoQueue()
-        self.load_start_urls()
-
-        self.spider_name = spider_config.get('spider_name')
-        log(self.spider_name, 'initializing ...')
+        self.initialize_urls()
         self.num_threads = spider_config.get('num_threads', 1)
-        self.database = spider_config.get('database')
-
-        DataStore.create(database=self.database,
-                         table='pages',
-                         cols=[('url', 'text'), ('html', 'text')])
 
         self.downloaders = [Downloader(spider_config=spider_config,
                                        thread_name='{}{}'.format(self.spider_name, n),
@@ -26,13 +22,19 @@ class Spider():
                                        database=self.database)
                             for n in self.num_threads]
 
-    def load_start_urls(self):
+    def initialize_urls(self):
         with open('data/iciba/start_urls', 'r') as file_:
-            urls = file_.read().strip().split('\n')
+            start_urls = file_.read().strip().split('\n')
+
+        parsed_urls = self.database.select('parsed_urls', cols=('url',))
+        extracted_urls = self.database.select('extracted_urls', cols=('url',))
+        parsed_urls = [row[0] for row in parsed_urls]
+        extracted_urls = [row[0] for row in extracted_urls]
+
+        urls = [url for url in (start_urls + extracted_urls) if url not in set(parsed_urls)]
+
         [self.urls.put(url) for url in urls]
 
     def run(self):
         for d in self.downloaders:
             d.start()
-        for d in self.downloaders:
-            d.join()

@@ -1,6 +1,6 @@
 from logger import log
 from bs4 import BeautifulSoup
-from datastore import DataStore
+from database import Database
 import re
 
 class IcibaParser():
@@ -13,15 +13,6 @@ class IcibaParser():
 
     def set_database(self, database):
         self.database = database
-        DataStore.create(database=database,
-                         table='sentences',
-                         cols=[('en', 'text'), ('cn', 'text')])
-        DataStore.create(database=database,
-                         table='parsed_urls',
-                         cols=[('url', 'text')])
-        DataStore.create(database=database,
-                         table='extracted_urls',
-                         cols=[('url', 'text')])
 
     def extract_urls(self, dom_tree):
         div_page_numbers = dom_tree.find('div', class_='jkPage')
@@ -43,26 +34,25 @@ class IcibaParser():
         else:
             return None
 
+    # return number of sentences extracted if success
     def extract_sentences(self, dom_tree):
         sentence_list_div = dom_tree.find('div', class_='jkList')
         sentence_divs = sentence_list_div.find_all('dl', class_='dj_dl')
-        print sentence_divs
         for sentence_div in sentence_divs:
             en_div = sentence_div.find('dt')
             cn_div = sentence_div.find('dd')
             en = ''.join([s for s in en_div.strings]).strip()
             cn = ''.join([s for s in cn_div.strings]).strip()
-            print en, cn
-            DataStore.insert(database=self.database,
-                             table='sentences',
-                             values=(en, cn))
+            # en and cn are already decoded to unicode by bs4
+            self.database.insert(table='sentences', values=(en, cn))
+        return len(sentence_divs)
 
     def parse(self, url, html_page):
         dom_tree = BeautifulSoup(html_page)
         try:
-            self.extract_sentences(dom_tree)
+            num_sentences = self.extract_sentences(dom_tree)
+            log(self.name, '{} sentence(s) found in {} ...'.format(num_sentences, url))
         except AttributeError as e:
-            print e
             log(self.name, 'no sentences found in {} ...'.format(url))
 
         new_urls = None
@@ -72,13 +62,11 @@ class IcibaParser():
         if new_urls is not None:
             log(self.name, '{} new urls extracted in {} ...'.format(len(new_urls), url))
             for new_url in new_urls:
-                DataStore.insert(database=self.database,
-                                 table='extracted_urls',
-                                 values=(new_url,))
+                self.database.insert(table='extracted_urls', values=(new_url,))
 
-        DataStore.insert(database=self.database,
-                         table='parsed_urls',
-                         values=(url,))
+        # data integrity: no commit before url is recorded
+        self.database.insert(table='parsed_urls', values=(url,))
+        self.database.commit()
         return new_urls
 
 def get_parser():

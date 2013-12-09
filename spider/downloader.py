@@ -1,5 +1,5 @@
 from logger import log
-from datastore import DataStore
+from bs4 import UnicodeDammit
 import threading
 import urllib2
 import time
@@ -37,9 +37,10 @@ class Downloader(threading.Thread):
                     raise e
 
     def save_page(self, url, html_page):
-        DataStore.insert(database=self.database,
-                         table='pages',
-                         values=(url, html_page))
+        dammit = UnicodeDammit(html_page)
+        enc = dammit.original_encoding
+        html_page = html_page.decode(enc)
+        self.database.insert(table='pages', values=(url, html_page))
 
     def wait(self, interval):
         log(self.name, 'start waiting ...')

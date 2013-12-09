@@ -1,7 +1,7 @@
-import os
 import ConfigParser
-from spider import Spider
 import parsers
+from spider import Spider
+from database import Database
 
 class SpiderEngine:
 
@@ -13,29 +13,30 @@ class SpiderEngine:
         sections_names = cfg.get('spiders', 'names').split(' ')
         spider_configs = dict()
 
-        # read spider configs
-        for section_name in sections_names:
-            spider_config = dict()
-            spider_config['spider_name'] = section_name
-            spider_config['data_path'] = os.path.join('./../data', section_name)
-            for option in cfg.options(section_name):
-                spider_config[option] = cfg.get(section_name, option)
-            spider_configs[section_name] = spider_config
-
         # initialize parsers
         parser_pkg = __import__('parsers', fromlist=parsers.__all__)
-        parsers_ = {}
+        parsers_ = dict()
         for parser_mod_name in parsers.__all__:
             parser_obj = getattr(parser_pkg, parser_mod_name).get_parser()
             parsers_[str(parser_obj)] = parser_obj
 
-        for parser_name in parsers_:
-            parsers_[parser_name].set_database(spider_configs[parser_name]['database'])
+        spiders = []
+        # read spider configs
+        for spider_name in sections_names:
+            spider_config = dict()
+            for option in cfg.options(spider_name):
+                spider_config[option] = cfg.get(spider_name, option)
+            spider_configs[spider_name] = spider_config
 
-        spiders = [Spider(spider_config=spider_configs[spider_name],
-                          parser=parsers_[spider_name])
-                   for spider_name in spider_configs]
+            database = Database(database_path=spider_config['database_path'])
+            # create database tables
+            # needs orm to be configurable
+            database.create(table='pages', cols=[('url', 'text'), ('html', 'text')])
+            database.create(table='sentences', cols=[('en', 'text'), ('cn', 'text')])
+            database.create(table='parsed_urls', cols=[('url', 'text')])
+            database.create(table='extracted_urls', cols=[('url', 'text')])
 
+            parser = parsers_[spider_name]
+            parser.set_database(database)
+            spiders.append(Spider(spider_name, spider_config, parser, database))
         [spider.run() for spider in spiders]
-
-
