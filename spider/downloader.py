@@ -22,7 +22,7 @@ class Downloader(threading.Thread):
         self.database = database
 
     def fetch(self, url):
-        request = urllib2.Request(url)
+        request = urllib2.Request(url.encode('utf-8'))
         user_agent = random.choice(self.user_agents)
         request.add_header('User-Agent', user_agent)
         fail_count = 0
@@ -34,7 +34,7 @@ class Downloader(threading.Thread):
             except Exception as e:
                 fail_count += 1
                 if fail_count <= self.max_retry:
-                    log(self.name, 'error:{0} {1}, retry {2} ...'.format(url, str(e), fail_count))
+                    log(self.name, u'error:{0} {1}, retry {2} ...'.format(url, str(e), fail_count))
                 else:
                     raise e
 
@@ -60,10 +60,10 @@ class Downloader(threading.Thread):
             try:
                 html = self.fetch(url)
             except Exception as e:
-                log(self.name, 'fail:{0} {1}'.format(url, e))
+                log(self.name, u'fail:{0} {1}'.format(url, e))
             else:
                 if self.rejection_msg is not None and self.rejection_msg not in html:
-                    log(self.name, 'success:{0}'.format(url))
+                    log(self.name, u'success:{0}'.format(url))
 
                     # save html page to dest
                     self.save_page(url=url, html_page=html)
@@ -74,7 +74,7 @@ class Downloader(threading.Thread):
                         [self.urls.put(url) for url in new_urls]
 
                 else:
-                    log(self.name, 'rejected:{0}'.format(url))
+                    log(self.name, u'rejected:{0}'.format(url))
                     self.urls.put(url)
                     self.wait(interval=60*60)
             finally:

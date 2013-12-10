@@ -1,5 +1,6 @@
 data/*
 !data/corpus.result
+!data/corpus.cn
 !data/spiders.cfg
 !data/user_agents.txt
 test/

@@ -1,1 +1,1 @@
-__all__ = ['iciba_parser']
+__all__ = ['iciba_parser', 'bing_parser']

@@ -52,16 +52,16 @@ class IcibaParser():
         dom_tree = BeautifulSoup(html_page)
         try:
             num_sentences = self.extract_sentences(dom_tree)
-            log(self.name, '{} sentence(s) found in {} ...'.format(num_sentences, url))
+            log(self.name, u'{} sentence(s) found in {} ...'.format(num_sentences, url))
         except AttributeError as e:
-            log(self.name, 'no sentences found in {} ...'.format(url))
+            log(self.name, u'no sentences found in {} ...'.format(url))
 
         new_urls = None
         if self.url_pattern.match(url) is None:
             new_urls = self.extract_urls(dom_tree)
 
         if new_urls is not None:
-            log(self.name, '{} new urls extracted in {} ...'.format(len(new_urls), url))
+            log(self.name, u'{} new urls extracted in {} ...'.format(len(new_urls), url))
             for new_url in new_urls:
                 self.database.insert(table='extracted_urls', values=(new_url,))
 
