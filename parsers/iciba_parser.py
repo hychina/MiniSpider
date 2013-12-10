@@ -1,5 +1,6 @@
 from logger import log
 from bs4 import BeautifulSoup
+from decorators import get_thread_name
 import re
 
 class IcibaParser():
@@ -45,9 +46,10 @@ class IcibaParser():
             en = self.en_pattern.search(en).group(1)
             cn = ''.join([s for s in cn_div.strings]).strip()
             # en and cn are already decoded to unicode by bs4
-            self.database.insert(table='sentences', values=(en, cn))
+            self.database.insert(self.name, table='sentences', values=(en, cn))
         return len(sentence_divs)
 
+    @get_thread_name
     def parse(self, url, html_page):
         dom_tree = BeautifulSoup(html_page)
         try:
@@ -63,11 +65,11 @@ class IcibaParser():
         if new_urls is not None:
             log(self.name, u'{} new urls extracted in {} ...'.format(len(new_urls), url))
             for new_url in new_urls:
-                self.database.insert(table='extracted_urls', values=(new_url,))
+                self.database.insert(thread_name=self.name, table='extracted_urls', values=(new_url,))
 
         # data integrity: no commit before url is recorded
-        self.database.insert(table='parsed_urls', values=(url,))
-        self.database.commit()
+        self.database.insert(thread_name=self.name, table='parsed_urls', values=(url,))
+        self.database.commit(thread_name=self.name)
         return new_urls
 
 def get_parser():

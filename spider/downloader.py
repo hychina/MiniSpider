@@ -42,7 +42,7 @@ class Downloader(threading.Thread):
         dammit = UnicodeDammit(html_page)
         enc = dammit.original_encoding
         html_page = html_page.decode(enc)
-        self.database.insert(table='pages', values=(url, html_page))
+        self.database.insert(thread_name=self.name, table='pages', values=(url, html_page))
 
     def wait(self, interval):
         log(self.name, 'start waiting ...')

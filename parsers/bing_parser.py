@@ -1,5 +1,6 @@
 from logger import log
 from bs4 import BeautifulSoup
+from decorators import get_thread_name
 import re
 
 class BingParser():
@@ -39,16 +40,17 @@ class BingParser():
 
             en = ''.join([s for s in en_div.strings]).strip()
             cn = ''.join([s for s in cn_div.strings]).strip()
-            self.database.insert(table='sentences', values=(en, cn))
+            self.database.insert(thread_name=self.name, table='sentences', values=(en, cn))
 
             try:
                 url = url_div.a['href']
             except Exception:
                 pass
             else:
-                self.database.insert(table='source_urls', values=(url,))
+                self.database.insert(thread_name=self.name, table='source_urls', values=(url,))
         return len(sentence_divs)
 
+    @get_thread_name
     def parse(self, url, html_page):
         dom_tree = BeautifulSoup(html_page)
         try:
@@ -57,6 +59,7 @@ class BingParser():
             log(self.name, u'no sentences found in {} ...'.format(url))
         else:
             log(self.name, u'{} sentence(s) found in {} ...'.format(num_sentences, url))
+
         new_urls = None
         try:
             new_urls = self.extract_urls(url, dom_tree)
@@ -66,13 +69,13 @@ class BingParser():
         if new_urls is not None:
             log(self.name, u'{} new url(s) extracted in {} ...'.format(len(new_urls), url))
             for new_url in new_urls:
-                self.database.insert(table='extracted_urls', values=(new_url,))
+                self.database.insert(thread_name=self.name, table='extracted_urls', values=(new_url,))
         else:
             log(self.name, u'no url(s) extracted in {} ...'.format(url))
 
         # data integrity: no commit before url is recorded
-        self.database.insert(table='parsed_urls', values=(url,))
-        self.database.commit()
+        self.database.insert(thread_name=self.name, table='parsed_urls', values=(url,))
+        self.database.commit(thread_name=self.name)
         return new_urls
 
 def get_parser():
