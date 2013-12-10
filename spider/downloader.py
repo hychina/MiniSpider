@@ -76,7 +76,7 @@ class Downloader(threading.Thread):
                 else:
                     log(self.name, u'rejected:{0}'.format(url))
                     self.urls.put(url)
-                    self.wait(interval=60*60)
+                    self.wait(interval=200*60)
             finally:
                 num_fetches += 1
                 if num_fetches == self.batch_size:
