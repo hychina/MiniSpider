@@ -62,7 +62,7 @@ class Downloader(threading.Thread):
             except Exception as e:
                 log(self.name, u'fail:{0} {1}'.format(url, e))
             else:
-                if self.rejection_msg is not None and self.rejection_msg not in html:
+                if self.rejection_msg is None or self.rejection_msg not in html:
                     log(self.name, u'success:{0}'.format(url))
 
                     # save html page to dest

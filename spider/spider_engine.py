@@ -6,10 +6,10 @@ from database import Database
 class SpiderEngine:
 
     @classmethod
-    def run(cls):
+    def run(cls, spider_cfg):
         cfg = ConfigParser.ConfigParser()
 
-        cfg.read('./data/spiders.cfg')
+        cfg.read(spider_cfg)
         sections_names = cfg.get('spiders', 'names').split(' ')
         spider_configs = dict()
 
