@@ -23,6 +23,7 @@ class YeeyanParser:
         for url in urls:
             print url
             self.database.insert(thread_name=self.name, table='extracted_urls', values=(url,))
+        self.database.commit(thread_name=self.name)
 
 def get_parser():
     return YeeyanParser()

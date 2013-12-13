@@ -1,1 +1,1 @@
-__all__ = ['yeeyan1']
+__all__ = ['iciba_parser', 'bing_parser', 'yeeyan1']
