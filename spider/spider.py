@@ -26,9 +26,16 @@ class Spider():
                             for n in xrange(self.num_threads)]
 
     def initialize_urls(self):
-        with open('data/{}/start_urls'.format(self.spider_name), 'r') as file_:
-            start_urls = file_.read().strip().split('\n')
-        start_urls = [url.decode('utf-8') for url in start_urls]
+        start_urls_path = 'data/{}/start_urls'.format(self.spider_name)
+        start_urls = []
+        try:
+            with open(start_urls_path, 'r') as file_:
+                start_urls = file_.read().strip().split('\n')
+        except IOError:
+            print "start_urls doesn't exist at {}".format(start_urls_path)
+        else:
+            start_urls = [url.decode('utf-8') for url in start_urls]
+
         parsed_urls = self.database.select('parsed_urls', cols=('url',))
         extracted_urls = self.database.select('extracted_urls', cols=('url',))
         parsed_urls = set([row[0] for row in parsed_urls])
