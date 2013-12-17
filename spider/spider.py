@@ -38,6 +38,7 @@ class Spider():
 
         parsed_urls = self.database.select('parsed_urls', cols=('url',))
         extracted_urls = self.database.select('extracted_urls', cols=('url',))
+
         parsed_urls = set([row[0] for row in parsed_urls])
         extracted_urls = [row[0] for row in extracted_urls]
 

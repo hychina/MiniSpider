@@ -1,13 +1,13 @@
+# -*- coding: utf-8 -*-
+
 from decorators import get_thread_name
 from bs4 import BeautifulSoup
-import bs4
 import re
 
 class YeeyanParser:
     def __init__(self):
         self.name = 'yeeyan'
-        self.select_pattern = re.compile(r'http://select.yeeyan.org/view/[0-9]+/[0-9]+')
-        self.article_pattern = re.compile(r'http://article.yeeyan.org/view/[0-9]+/[0-9]+')
+        self.source_url_pattern = re.compile(r'http://source\.yeeyan\.org/view/.*')
 
     def __str__(self):
         return self.name
@@ -21,21 +21,16 @@ class YeeyanParser:
                                                       ('source_url', 'text')])
 
     def extract_source_url(self, url, dom):
-        source_url = ''
-        if self.select_pattern.match(url):
-            source_div = dom.find('ul', class_='sa_source')
+        source_div = dom.find('ul', class_='sa_source')
+        if source_div:
             source_url = source_div.find_all('li')[1].a['href']
-        elif self.article_pattern.match(url):
+        else:
             source_div = dom.find('div', class_='y_article_copyright')
             source_url = source_div.find_all('li')[0].a['href']
-        print 'source_url: {}'.format(source_url)
-        # self.database.insert(self.name, 'extracted_urls', values=(source_url,))
-        # self.database.insert(self.name, 'url_pairs', values=(url, source_url))
-        # self.database.commit(self.name)
+
+        return source_url
 
     def extract_content(self, url, dom):
-        title = ''
-        content = ''
         doc_div = dom.find('div', class_='y_l no_border')
         if doc_div:
             h1_divs = doc_div.find_all('h1')
@@ -53,25 +48,31 @@ class YeeyanParser:
             paras = [p for p in paras if p.strip()]
             content = '\n'.join(paras)
         else:
-            paras = []
-            for c in content_div.children:
-                if type(c) == bs4.element.NavigableString:
-                    paras.append(c.strip())
-                else:
-                    paras.append(''.join([s.strip() for s in c.strings]))
-            content = ''.join(paras)
-        # print url
-        # print title
-        # print content
-        # self.database.insert(self.name, table='docs', values=(url, title, content))
-        # self.database.insert(self.name, table='parse_urls', values=(url,))
-        # self.database.commit(self.name)
+            content = [s.strip() for s in content_div.strings]
+            content = ''.join([s for s in content if s != ''])
+
+        if title and content:
+            return (url, title, content)
 
     @get_thread_name
     def parse(self, url, html_page):
         dom = BeautifulSoup(html_page)
-        self.extract_content(url, dom)
-        self.extract_source_url(url, dom)
+
+        source_url = None
+        doc = None
+
+        try:
+            doc = self.extract_content(url, dom)
+            source_url = self.extract_source_url(url, dom)
+        except:
+            print 'error: %s' % url
+
+        if source_url and doc:
+            self.database.insert(self.name, 'extracted_urls', values=(source_url,))
+            self.database.insert(self.name, 'url_pairs', values=(url, source_url))
+            self.database.insert(self.name, table='docs', values=doc)
+            self.database.insert(self.name, table='parsed_urls', values=(url,))
+            self.database.commit(self.name)
 
 def get_parser():
     return YeeyanParser()
