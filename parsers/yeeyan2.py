@@ -22,12 +22,11 @@ class YeeyanParser:
 
     def extract_source_url(self, url, dom):
         source_div = dom.find('ul', class_='sa_source')
-        if source_div:
-            source_url = source_div.find_all('li')[1].a['href']
-        else:
+        if not source_div:
             source_div = dom.find('div', class_='y_article_copyright')
-            source_url = source_div.find_all('li')[0].a['href']
 
+        source_url = source_div.find_all('li')[2].a['href']
+        print source_url
         return source_url
 
     def extract_content(self, url, dom):
