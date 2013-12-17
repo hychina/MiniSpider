@@ -1,5 +1,5 @@
 import sqlite3
-import time
+import threading
 
 class Database:
     def __init__(self, database_path):
@@ -9,9 +9,9 @@ class Database:
                      'insert': 'insert into {} values({})',
                      'select': 'select {} from {}'}
 
-    def commit(self, thread_name):
-        if thread_name in self.conns:
-            self.conns[thread_name].commit()
+    # def commit(self, thread_name):
+    #     if thread_name in self.conns:
+    #         self.conns[thread_name].commit()
 
     def create(self, table, cols):
         cols = ','.join([col[0] + ' ' + col[1] for col in cols])
@@ -29,21 +29,18 @@ class Database:
             self.conns[thread_name] = conn
             return conn
 
-    def close(self, thread_name):
-        if thread_name in self.conns:
-            self.conns[thread_name].close()
-            self.conns.pop(thread_name)
+    # def close(self, thread_name):
+    #     if thread_name in self.conns:
+    #         self.conns[thread_name].close()
+    #         self.conns.pop(thread_name)
 
-    def insert(self, thread_name, table, values):
+    def insert(self, table, values):
+        thread_name = threading.current_thread().name
         values = [value for value in values]
         sql_insert = self.sqls['insert'].format(table, ','.join(['?']*len(values)))
-
         conn = self.get_connection(thread_name)
-        try:
-            conn.execute(sql_insert, values)
-        except sqlite3.OperationalError as e:
-            self.record_failure(sql_insert)
-            print '{} : {} : at {}'.format(thread_name, e, time.time())
+        conn.execute(sql_insert, values)
+        conn.commit()
 
     def select(self, table, cols):
         sql_select = self.sqls['select'].format(','.join(cols), table)

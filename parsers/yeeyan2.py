@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from decorators import get_thread_name
-from bs4 import BeautifulSoup
-import re
+from bs4 import BeautifulSoup, UnicodeDammit
+from logger import log
+import threading
 
 class YeeyanParser:
     def __init__(self):
         self.name = 'yeeyan'
-        self.source_url_pattern = re.compile(r'http://source\.yeeyan\.org/view/.*')
 
     def __str__(self):
         return self.name
@@ -26,7 +25,6 @@ class YeeyanParser:
             source_div = dom.find('div', class_='y_article_copyright')
 
         source_url = source_div.find_all('li')[2].a['href']
-        print source_url
         return source_url
 
     def extract_content(self, url, dom):
@@ -53,25 +51,30 @@ class YeeyanParser:
         if title and content:
             return (url, title, content)
 
-    @get_thread_name
-    def parse(self, url, html_page):
-        dom = BeautifulSoup(html_page)
+    def save_page(self, url, html_page):
+        dammit = UnicodeDammit(html_page)
+        enc = dammit.original_encoding
+        html_page = html_page.decode(enc)
+        self.database.insert(table='pages', values=(url, html_page))
 
+    def parse(self, url, html_page):
+        # self.save_page(url, html_page)
+
+        dom = BeautifulSoup(html_page)
         source_url = None
         doc = None
-
         try:
             doc = self.extract_content(url, dom)
             source_url = self.extract_source_url(url, dom)
         except:
-            print 'error: %s' % url
+            log(threading.current_thread().name, 'error: {}'.format(url))
 
         if source_url and doc:
-            self.database.insert(self.name, 'extracted_urls', values=(source_url,))
-            self.database.insert(self.name, 'url_pairs', values=(url, source_url))
-            self.database.insert(self.name, table='docs', values=doc)
-            self.database.insert(self.name, table='parsed_urls', values=(url,))
-            self.database.commit(self.name)
+            log(threading.current_thread().name, source_url)
+            self.database.insert('extracted_urls', values=(source_url,))
+            self.database.insert('url_pairs', values=(url, source_url))
+            self.database.insert(table='docs', values=doc)
+            self.database.insert(table='parsed_urls', values=(url,))
 
 def get_parser():
     return YeeyanParser()

@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+import re
+
 from logger import log
-from bs4 import UnicodeDammit
 import threading
 import urllib2
 import time
@@ -15,6 +17,12 @@ class Downloader(threading.Thread):
         self.fetch_interval = int(spider_config.get('fetch_interval', 1))
         self.batch_size = int(spider_config.get('batch_size', 100))
         self.batch_interval = int(spider_config.get('batch_interval', 100))
+
+        # 对 url 进行过滤
+        self.url_pattern = None
+        url_pattern = spider_config.get('url_pattern', '')
+        if url_pattern:
+            self.url_pattern = re.compile(url_pattern)
 
         self.parser = parser
         self.urls = urls
@@ -38,12 +46,6 @@ class Downloader(threading.Thread):
                 else:
                     raise e
 
-    def save_page(self, url, html_page):
-        dammit = UnicodeDammit(html_page)
-        enc = dammit.original_encoding
-        html_page = html_page.decode(enc)
-        self.database.insert(thread_name=self.name, table='pages', values=(url, html_page))
-
     def wait(self, interval):
         log(self.name, 'start waiting ...')
         start_time = time.time()
@@ -56,17 +58,20 @@ class Downloader(threading.Thread):
         log(self.name, 'started ...')
         num_fetches = 0
         while True:
+            # get url from queue
             url = self.urls.get()
+            if self.url_pattern and not self.url_pattern.match(url):
+                log(self.name, u'filtered:{}'.format(url))
+                continue
+
             try:
+                # fetch url
                 html = self.fetch(url)
             except Exception as e:
                 log(self.name, u'fail:{0} {1}'.format(url, e))
             else:
                 if self.rejection_msg is None or self.rejection_msg not in html:
                     log(self.name, u'success:{0}'.format(url))
-
-                    # save html page to dest
-                    self.save_page(url=url, html_page=html)
 
                     # feed to parser
                     new_urls = self.parser.parse(url=url, html_page=html)
