@@ -4,6 +4,8 @@ data/*
 !data/spiders.cfg
 !data/yeeyan.cfg
 !data/user_agents.txt
+!data/conf
+!data/conf/*
 test/
 .idea/
 *.py[cod]

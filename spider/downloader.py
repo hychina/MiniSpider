@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
-import re
 
 from logger import log
 import threading
 import urllib2
 import time
 import random
+import socket
+
+class RedirectHandler(urllib2.HTTPRedirectHandler):
+    def http_error_301(self, req, fp, code, msg, headers):
+        result = urllib2.HTTPRedirectHandler.http_error_301(
+            self, req, fp, code, msg, headers)
+        result.status = code
+        return result
 
 class Downloader(threading.Thread):
     def __init__(self, spider_config, thread_name, urls, user_agents, parser, database):
@@ -17,32 +24,31 @@ class Downloader(threading.Thread):
         self.fetch_interval = int(spider_config.get('fetch_interval', 1))
         self.batch_size = int(spider_config.get('batch_size', 100))
         self.batch_interval = int(spider_config.get('batch_interval', 100))
-
-        # 对 url 进行过滤
-        self.url_pattern = None
-        url_pattern = spider_config.get('url_pattern', '')
-        if url_pattern:
-            self.url_pattern = re.compile(url_pattern)
+        self.retry_interval = int(spider_config.get('retry_interval', 30))
 
         self.parser = parser
         self.urls = urls
         self.user_agents = user_agents
         self.database = database
+        self.url_opener = urllib2.build_opener(RedirectHandler)
 
     def fetch(self, url):
         request = urllib2.Request(url.encode('utf-8'))
         user_agent = random.choice(self.user_agents)
         request.add_header('User-Agent', user_agent)
+        open_method = self.url_opener.open
         fail_count = 0
         while True:
             try:
                 time.sleep(self.fetch_interval)
-                resp = urllib2.urlopen(request, timeout=self.timeout)
+                resp = open_method(request, timeout=self.timeout)
                 return resp.read()
             except Exception as e:
                 fail_count += 1
                 if fail_count <= self.max_retry:
-                    log(self.name, u'error:{0} {1}, retry {2} ...'.format(url, str(e), fail_count))
+                    log(self.name, u'error:{} {} {}, retry {} ...'.format(
+                        url, type(e), e, fail_count))
+                    time.sleep(self.retry_interval)
                 else:
                     raise e
 
@@ -60,9 +66,6 @@ class Downloader(threading.Thread):
         while True:
             # get url from queue
             url = self.urls.get()
-            if self.url_pattern and not self.url_pattern.match(url):
-                log(self.name, u'filtered:{}'.format(url))
-                continue
 
             try:
                 # fetch url
