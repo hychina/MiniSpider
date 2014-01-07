@@ -1,12 +1,6 @@
-data/*
-!data/corpus.result
-!data/corpus.cn
-!data/spiders.cfg
-!data/yeeyan.cfg
-!data/user_agents.txt
-!data/conf
-!data/conf/*
-test/
+demo/bing/data/
+demo/iciba/data/
+demo/yeeyan/data/
 .idea/
 *.py[cod]
 .DS_Store

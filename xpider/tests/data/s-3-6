@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="icon" type="image/x-icon" href="http://static.yeeyan.org/images/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>译言精选-折磨人的商业计划书</title>
+<meta name="author" content="译言" />
+<meta name="keywords" content="译言精选"/>
+<meta name="description" content="从90年代以来，我几经看了成千上万的商业计划报告。其中绝大部分都很糟糕。不幸的是，这并不是微软Powerpoint软件的错（即使 Freelance 也不能解决这个问题）。 这其实是计划作者的责任。Edward Tufte 是 The Visual Display of Quantitative Information方面的权威，他认为Powerpoint 绝对是邪恶而且有害的。象 Beyond Bullets 这样的网站有助于减少这些害处，但是因为我必须在很短的时间里（通常是30到60分钟）完成非常细节内容，我想有必要更详细的介绍一下什么是“好的“计划。 几年以前，Chris Wand （和我一起在 Mobius 投资公司工作过）列出了一些和VC商谈时必须解决的问题。如果所有创业者都自觉考虑并解答了这些问题，那世界会变得容易....."/>
+<link rel="apple-touch-icon" href="http://static.yeeyan.org/upload/image/2013/11/25/13853449839.png"/> 
+<script type="text/javascript" src="http://static.yeeyan.org/js/jquery-1.3.2.min.js"></script> 
+<link href="http://static.yeeyan.org/css/select.css?2001" rel="stylesheet" type="text/css"  />
+</head>
+<body>
+        <div class="s_wrapper">
+            <div class="s_hearder" style="position:relative;">
+                <a href="http://www.yeeyan.org">
+                    译言
+                </a>
+                -
+                <a href="http://select.yeeyan.org">
+                    精选
+                </a>
+                <span class="username">
+			 
+	                        <a href="http://www.yeeyan.org/login"> 登录 </a>
+				<a href="http://www.yeeyan.org/register"> 注册 </a>
+			 
+                </span>
+					            </div><script>
+function shareme(site,translation_id,t_url,title,content){
+	if(site == '163miniblog'){
+		var surl="http://t.163.com/article/user/checkLogin.do?source="+encodeURI('译言网')+"&info="+title+" "+t_url+" ";
+	}else{
+		var surl="http://www.bshare.cn/bshare_redirect?type=0&site="+site+"&url="+t_url+"&title="+title+"&content="+content+"";
+	}
+	window.open(surl);
+}
+</script>
+<div class="sa_mark"><div class="sa_bookmark sa_bookmark_right">
+	<a title="分享到新浪微博"  class="share_1"  href="javascript:void(0)"  onclick="window.open('http://v.t.sina.com.cn/share/share.php?url='+encodeURI(document.location)+'&appkey=1960942321&title='+encodeURI(document.title) , 'newwindow', 'height=330,width=550,top=' + (screen.height - 280) / 2 + ',left=' + (screen.width - 550) / 2 + ', toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no')"> </a>
+	<a href="javascript:void(0)" onclick="window.open('http://v.t.qq.com/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&source=bookmark','_blank','width=610,height=350')" title="分享到QQ微博"> </a>
+	<a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" title="分享到豆瓣"> </a>
+	<a class="favorite " href="javascript:void(0)"   onclick="favorate(6);" title="收藏"></a>
+
+</div></div>
+<div class="hidden" style="display:none" id="show_more">
+	<a href="javascript:void(0)"  onclick="shareme('baiducang','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_5" title="分享到百度收藏"></a>
+	<a href="javascript:void(0)"  onclick="shareme('delicious','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_6" title="分享到Delicious"></a>
+	<a href="javascript:void(0)"  onclick="shareme('xianguo','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_7" title="分享到鲜果"></a>
+	<a href="javascript:void(0)"  onclick="shareme('zhuaxia','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_8" title="分享到抓虾"></a>
+	<a href="javascript:void(0)"  onclick="shareme('twitter','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_9" title="分享到Twitter"></a>
+	<a href="javascript:void(0)"  onclick="shareme('douban','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_10" title="分享到豆瓣"></a>
+	<a href="javascript:void(0)"  onclick="shareme('sohubai','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_11" title="分享到搜狐白社会"></a>
+	<a href="javascript:void(0)"  onclick="shareme('facebook','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_12" title="分享到FaceBook"></a>
+	<a href="javascript:void(0)"  onclick="shareme('kaixin001','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_13" title="分享到开心网"></a>
+	<a href="javascript:void(0)" onclick="shareme('qqshuqian','6','http%3A%2F%2Farticle.yeeyan.org%2Fview%2F3%2F6','%E6%8A%98%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6','%E4%BB%8E90%E5%B9%B4%E4%BB%A3%E4%BB%A5%E6%9D%A5%EF%BC%8C%E6%88%91%E5%87%A0%E7%BB%8F%E7%9C%8B%E4%BA%86%E6%88%90%E5%8D%83%E4%B8%8A%E4%B8%87%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E6%8A%A5%E5%91%8A%E3%80%82%E5%85%B6%E4%B8%AD%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E5%BE%88%E7%B3%9F%E7%B3%95%E3%80%82%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%BE%AE%E8%BD%AFPowerpoint%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%94%99%EF%BC%88%E5%8D%B3%E4%BD%BF%20Freelance%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%89%E3%80%82%20%E8%BF%99%E5%85%B6%E5%AE%9E%E6%98%AF%E8%AE%A1%E5%88%92%E4%BD%9C%E8%80%85%E7%9A%84%E8%B4%A3%E4%BB%BB%E3%80%82Edward%20Tufte%20%E6%98%AF%20The%20Visual%20Display%20of%20Quantitative%20Information%E6%96%B9%E9%9D%A2%E7%9A%84%E6%9D%83%E5%A8%81%EF%BC%8C%E4%BB%96%E8%AE%A4%E4%B8%BAPowerpoint%20%E7%BB%9D%E5%AF%B9%E6%98%AF%E9%82%AA%E6%81%B6%E8%80%8C%E4%B8%94%E6%9C%89%E5%AE%B3%E7%9A%84%E3%80%82%E8%B1%A1%20Beyond%20Bullets%20%E8%BF%99%E6%A0%B7%E7%9A%84%E7%BD%91%E7%AB%99%E6%9C%89%E5%8A%A9%E4%BA%8E%E5%87%8F%E5%B0%91%E8%BF%99%E4%BA%9B%E5%AE%B3%E5%A4%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%BE%88%E7%9F%AD%E7%9A%84%E6%97%B6%E9%97%B4%E9%87%8C%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF30%E5%88%B060%E5%88%86%E9%92%9F%EF%BC%89%E5%AE%8C%E6%88%90%E9%9D%9E%E5%B8%B8%E7%BB%86%E8%8A%82%E5%86%85%E5%AE%B9%EF%BC%8C%E6%88%91%E6%83%B3%E6%9C%89%E5%BF%85%E8%A6%81%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9C%E8%AE%A1%E5%88%92%E3%80%82%20%E5%87%A0%E5%B9%B4%E4%BB%A5%E5%89%8D%EF%BC%8CChris%20Wand%20%EF%BC%88%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%9C%A8%20Mobius%20%E6%8A%95%E8%B5%84%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E8%BF%87%EF%BC%89%E5%88%97%E5%87%BA%E4%BA%86%E4%B8%80%E4%BA%9B%E5%92%8CVC%E5%95%86%E8%B0%88%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E5%A6%82%E6%9E%9C%E6%89%80%E6%9C%89%E5%88%9B%E4%B8%9A%E8%80%85%E9%83%BD%E8%87%AA%E8%A7%89%E8%80%83%E8%99%91%E5%B9%B6%E8%A7%A3%E7%AD%94%E4%BA%86%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B8%96%E7%95%8C%E4%BC%9A%E5%8F%98%E5%BE%97%E5%AE%B9%E6%98%93.....')"  class="share_2" title="分享到QQ">分享到QQ</a>
+
+</div>	<div class="sa_main fff_bgc clearfix">
+		<div id="sa_left" class="sa_left closetag">
+			<!-- <div class="sa_bookmark" id="boxad11"></div> -->
+			
+			<div class="sa_right_point" style="display:none"><a title="关闭文章名片" href="javascript:void(0);" onclick="sidebar()"></a></div>
+			<div class="sa_abstract">从90年代以来，我几经看了成千上万的商业计划报告。其中绝大部分都很糟糕。不幸的是，这并不是微软Powerpoint软件的错（即使 Freelance 也不能解决这个问题）。 这其实是计划作者的责任。Edward Tufte 是 The Visual Display of Quantitative Information方面的权威，他认为Powerpoint 绝对是邪恶而且有害的。象 Beyond Bullets 这样的网站有助于减少这些害处，但是因为我必须在很短的时间里（通常是30到60分钟）完成非常细节内容，我想有必要更详细的介绍一下什么是“好的“计划。 几年以前，Chris Wand （和我一起在 Mobius 投资公司工作过）列出了一些和VC商谈时必须解决的问题。如果所有创业者都自觉考虑并解答了这些问题，那世界会变得容易.....</div>			<div class="sa_title_box">
+				<h1 class="sa_title sa_title_pr">折磨人的商业计划书</h1>
+				<div class="sa_left_info">
+					<ul class="clearfix">
+						<li><span class="sa_blue">13604</span>阅读</li>
+						<li>
+						<a href="javascript:void(0);" onclick="up(6);"><span id='up_count_1' class="sa_blue" >4</span></a>赞</li>
+						<li class="last"><span class="sa_blue">3</span>评论</li>
+					</ul>
+					<div class="opentag" style="display:block"><a href="javascript:void(0);" onclick="sidebar()">打开文章名片</a></div>
+				</div>
+			</div>
+			<div class="sa_author"><span>译者：<a class="sa_blue" href="http://user.yeeyan.org/u/3">丁丁</a></span><br /><span>发布：2006-07-21 15:08:19</span><span><a class="sa_blue" href="http://article.yeeyan.org/compare/6">挑错</a> | <a  class="sa_blue"  href="http://select.yeeyan.org/view/3/6/author" class="red">查看译者版本</a> | <a class="sa_blue" href="javascript:void(0)" onclick="favorate(6)">收藏本文</a></span></div>
+									<div class="sa_content">
+				从90年代以来，我几经看了成千上万的商业计划报告。其中绝大部分都很糟糕。不幸的是，这并不是微软Powerpoint软件的错（即使 <a href=\"http://www.lotus.com/products/product2.nsf/wdocs/freelance\">Freelance</a> 也不能解决这个问题）。<br />
+<br />
+这其实是计划作者的责任。<a href=\"http://www.edwardtufte.com/tufte/index\">Edward Tufte</a> 是 <a href=\"http://www.amazon.com/exec/obidos/ASIN/0961392142/feldwebsite-20\">The Visual Display of Quantitative Information</a>方面的权威，他认为<a href=\"http://www.wired.com/wired/archive/11.09/ppt2.html\">Powerpoint 绝对是邪恶而且有害的</a>。象 <a href=\"http://sociablemedia.typepad.com/beyond_bullets/\">Beyond Bullets</a> 这样的网站有助于减少这些害处，但是因为我必须在很短的时间里（通常是30到60分钟）完成非常细节内容，我想有必要更详细的介绍一下什么是“好的“计划。<br />
+<br />
+几年以前，<a href=\"http://www.mobiusvc.com/about/people/about_partners.asp?id=6\">Chris Wand</a> （和我一起在 Mobius 投资公司工作过）列出了一些和VC商谈时必须解决的问题。如果所有创业者都自觉考虑并解答了这些问题，那世界会变得容易多了。<br />
+<br />
+下面是那些应该解答的问题：<br />
+<br />
+1) 你的眼光是什么？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的远见是什么？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你要解决什么问题？为谁？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你将来想要成为什么样的人？<br />
+<br />
+2) 你的市场机会是什么？市场有多大？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;您目标的市场有多大？发展有多快？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;这个市场有多成熟，或多不成熟？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你是否有资本成为这个市场前两三位的成员？<br />
+<br />
+3) 介绍你的产品和服务<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的产品或服务是什么？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;解决了用户的什么问题？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的产品或服务有什么特彼之处？<br />
+<br />
+4) 你的用户是谁？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁是现在的用户？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁是目标的用户？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;理想的用户是什么样的？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁会付费？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;介绍一下某个具体用户的例子<br />
+<br />
+5) 你的<span>价值主张是什么？</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你给用户提供了什么价值？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;使用／买你的产品，用户的投资回收率是什么？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你解决了什么问题？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你是销售维他命，阿司匹林，还是消炎药？（奢侈品，有益的东西，还是必须品？）<br />
+<br />
+6) 你如何销售？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;销售程序什么？周期有多长？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的销售和市场方针是什么？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你当前的销售链是什么？<br />
+<br />
+7) 你怎么吸引客户？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;争取每个用户要花费多少钱？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;不同时期这个费用是否不同？为什么？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;用户的永久价值什么？<br />
+<br />
+8) 你的管理团队是谁？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的管理团队是谁？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;他们有什么经验？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;欠缺那些环节？有什么计划去弥补？<br />
+<br />
+9) 你的收入模式是什么?<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;如何赚钱<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的收入模式<br />
+&nbsp;&nbsp;&nbsp;&nbsp;需要怎样才能盈利？<br />
+<br />
+10) 你现在进展到那一步？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你现在进展到那一步？技术／产品？团队？财务／营收？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;现在进展情况如何？现状和前景更清晰了？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你将来的计划？<br />
+<br />
+11) 你的融资计划是什么？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;已经得到了什么投资？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;希望得到多少投资？比例如何？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;资金用在什么地方？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;资金可以支持多久？到那时公司是否可以发展到一个重要里程碑？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你还打算吸引多少资金？什么时候？<br />
+<br />
+12) 你的竞争对手是谁？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁是你当前和潜在的竞争对手？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁有可能和你竞争，谁有可能和你合作？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你的优势和弱点？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你有什么特殊之处？<br />
+<br />
+13) 你有什么合作伙伴？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;谁是你的销售或技术合作伙伴？当前？未来？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;这些合作伙伴有多可靠？<br />
+<br />
+14) 为什么适合有意的投资者？<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;和投资者的方向，经验吻合？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;与投资者现有的投资组合有什么互补，或竞争？<br />
+<br />
+15) 其它<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;成功的条件里有什么还只是假设？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;有什么突然因素有可能一夜之间改变你的生意？新科技，新市场成员，规则法规的变化？<br />
+&nbsp;&nbsp;&nbsp;&nbsp;你公司的薄弱环节是什么？<br />			</div>
+			<div class="sa_copyright clearfix">
+				<div class="clearfix">
+					<div class="sa_cp"><span class="sa_blue">版权声明：</span><br />本译文仅用于学习和交流目的。非商业转载请注明译者、出处，并保留文章在译言的完整链接。</div>
+					<ul class="sa_source">
+												<li>原文来源：<a class="sa_blue" href='http://www.feld.com/blog/archives/2004/06/the_torturous_w.html' target="_blank">feld.com</a></li>
+						<li>原文标题：<a class="sa_blue" title="The Torturous World of Powerpoint" target="_blank" href="http://source.yeeyan.org/view/59_089">The Torturous World of Powerpoint</a></li>
+						<li>原文地址：<a class="sa_blue" target="_blank" href="http://www.feld.com/blog/archives/2004/06/the_torturous_w.html">http://www.feld.com/blog/archives/2004/06/the_torturous_w.html</a></li>
+					</ul>
+					</div>
+				<div class="sa_switch_open sa_switch_close"><a href="javascript:void(0);" onclick="sidebar()">打开文章名片</a></div>
+			</div> 
+			<div class="sa_comments">
+				<a style="overfloat:hidden;" name="comment"></a>
+				<div class="name">已收集到<span class="sa_blue">3</span>评论</div>
+				<div class="g_comments">
+					<div class="sa_comment_list"> 
+						<!-- 评论 -->
+						<script type="text/javascript"> 
+							function submit_sure() {
+								var com = $("#mycomment").val().replace(/(^\s*)/g, "");
+								if (com == '请在此输入您的评论内容......' || com=='') {
+									return false;
+								}else{
+									document.comment_frm.submit();
+									document.getElementById('submit_btn').onclick=function(){return false;}
+								}
+							}
+							function clearComment() {
+								var com = $("#mycomment").val();
+								if (com == '请在此输入您的评论内容......') {
+									$("#mycomment").val('');
+								}
+							}
+						</script>
+						<!--  -->
+						<form action="http://article.yeeyan.org/docomment" method="POST" name="comment_frm" >
+ 
+												<div id="cl_458" class="sa_comment">
+							<div class="clearfix">
+								<div class="sa_avatar"><a href="http://user.yeeyan.org/u/141"><img src="http://static.yeeyan.org/icon/141.jpg"></a></div>
+								<div class="sa_text clearfix">
+									<div>
+										<div class="sa_comment_vote"><a href="javascript:void(0);" onclick="vote(458,'up','')">支持<span  id="vote_up_458">0</span></a> <b><em style="width:50%"></em></b> <a href="javascript:void(0);" onclick="vote(458,'down')">反对<span id="vote_down_458" >0</span></a></div>
+										<span><a href="http://user.yeeyan.org/u/141">firefox2</a></span><span>发表于：2006-11-22 15:14:10</span>
+									</div>
+																		<p>还用老掉牙的IE? 我们建议您<br/><br/>    * 下载带有 Google 工具栏的 Firefox <br/>---------------------------------------------------------<br/>厉害。。。。。。。。。‘<br/><br/><br/>看看我的站http://www.firefox2.li<br/><br/>不是AD啊</p>
+									<p class="reply sa_blue">
+									 	<a class="re_co"  href="javascript:void(0);" onclick="return showCommentArea('458','firefox2');">回复</a>
+									 										</p>
+								</div>
+							</div> 
+						</div>
+												<div id="cl_50507" class="sa_comment">
+							<div class="clearfix">
+								<div class="sa_avatar"><a href="http://user.yeeyan.org/u/17271"><img src="http://static.yeeyan.org/icon/17271.jpg"></a></div>
+								<div class="sa_text clearfix">
+									<div>
+										<div class="sa_comment_vote"><a href="javascript:void(0);" onclick="vote(50507,'up','')">支持<span  id="vote_up_50507">0</span></a> <b><em style="width:50%"></em></b> <a href="javascript:void(0);" onclick="vote(50507,'down')">反对<span id="vote_down_50507" >0</span></a></div>
+										<span><a href="http://user.yeeyan.org/u/17271">Rebecca</a></span><span>发表于：2008-11-20 17:33:42</span>
+									</div>
+																		<p>第二篇文章，留个足迹~~</p>
+									<p class="reply sa_blue">
+									 	<a class="re_co"  href="javascript:void(0);" onclick="return showCommentArea('50507','Rebecca');">回复</a>
+									 										</p>
+								</div>
+							</div> 
+						</div>
+												<div id="cl_89364" class="sa_comment">
+							<div class="clearfix">
+								<div class="sa_avatar"><a href="http://user.yeeyan.org/u/74399"><img src="http://static.yeeyan.org/icon/74399.jpg"></a></div>
+								<div class="sa_text clearfix">
+									<div>
+										<div class="sa_comment_vote"><a href="javascript:void(0);" onclick="vote(89364,'up','')">支持<span  id="vote_up_89364">0</span></a> <b><em style="width:50%"></em></b> <a href="javascript:void(0);" onclick="vote(89364,'down')">反对<span id="vote_down_89364" >0</span></a></div>
+										<span><a href="http://user.yeeyan.org/u/74399">裸奔少年</a></span><span>发表于：2009-03-18 20:35:05</span>
+									</div>
+																		<p>用到了，感谢</p>
+									<p class="reply sa_blue">
+									 	<a class="re_co"  href="javascript:void(0);" onclick="return showCommentArea('89364','裸奔少年');">回复</a>
+									 										</p>
+								</div>
+							</div> 
+						</div>
+						 
+ 						
+						<script>
+							function go_to_backtop(){
+								$("html, body").animate({ scrollTop:0 },200);
+							}
+							var comment_var = '<ul class="info_sheet"><li>您没有登录，不能发表评论，请 <a href="http://www.yeeyan.org/login" style="color:#0088CC">登录</a> <span style="float:right;margin-bottom:15px;"><a href="javascript:void(0)" onclick="go_to_backtop()">返回正文</a></span></li> <a style="overfloat:hidden" name="inputcomment"></a><li><textarea dataType="Limit" min="5" max="300" msg="评论内容有字数限制：5字到300字" class="text" id="mycomment" onfocus ="clearComment();" name="data[Comment][content]" style="width:97%;_width:99%;height:80px;background:url(http://static.yeeyan.org/img/yeeyan_logo_gray.png) no-repeat center center #fff">请在此输入您的评论内容......</textarea></li><li><input type="button" value="提交评论" class="btn blue_btn"  id="submit_btn"   /> <input type="button" onclick="return cancelCommentArea()" value="取消" class="btn blue_btn" /></li></ul>';
+							document.write(comment_var);
+						</script>
+
+						<input type="hidden" name="data[Comment][translation_id]" value="6" />
+						<input type="hidden" name="data[Comment][current_url]" value="http://select.yeeyan.org/view/3/6#comment" />
+						<input type="hidden" name="data[Comment][parent_id]" value="0" id="comment_pid" />
+						<input type="hidden" name="data[Comment][author_id]" value="3" />
+
+						</form>
+
+						<!-- 评论 END -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sa_right" class="sa_right" style="display:none">
+			<script>
+			function bindEnter(event) {
+				if (event.keyCode == 13) {
+					var keyword=document.getElementById('keyword').value.replace(/(^\s*)|(\s*$)/g, "");
+					if(keyword!=''){
+						window.location.href='/search/'+encodeURIComponent(keyword);
+						event.returnValue = false;
+					}
+				}
+			}
+			</script>
+			<div class="sa_search" style="padding-bottom:0;"><input id="keyword" type="text" name="search"  onkeydown="bindEnter(event)" /></div>
+			<div class="sa_articleinfo top_box">
+				<ul class="clearfix">
+					<li><span class="sa_blue">13604</span>阅读</li>
+					<li>
+					<a href="javascript:void(0);" onclick="up(6);"><span id='up_count' class="sa_blue" >4</span></a>赞</li>
+					<li class="last"><span class="sa_blue">3</span>评论</li>
+				</ul>
+				<div class="sa_articletag clearfix">
+									</div>
+			</div>
+			<div class="sa_right_title"><span>译者</span></div>
+			<div class="sa_articleinfo">
+				<div class="clearfix">
+					<div class="sa_avatar"><a href="http://user.yeeyan.org/u/3"><img src="http://static.yeeyan.org/icon/3.jpg" width="80" height="80" alt="" /></a></div>
+					<div class="sa_text">
+						<p><span><a class="sa_blue" href="http://user.yeeyan.org/u/3">丁丁</a></span></p>
+			    		<p style="height:59px;overflow:hidden;">Yeeyan Rocks!</p>
+			    	</div>
+					<ul class="clearfix sa_authorinfo">
+						<li style="width: 38px;overflow:hidden;"><span class="s">2</span>精选</li>
+						<li class="t" style="width: 38px;overflow:hidden;"><span>16</span>译文</li>
+						<li class="t" style="width: 38px;overflow:hidden;"><span>51</span>原文</li>
+						<li class="sa_blue t" style="width: 38px;overflow:hidden;"><a href="javascript:void(0);" onclick="followed(this,3)"><span>+</span>关注</a></li>
+					</ul>
+				</div>
+			</div>
+					<div class="sa_hotarticles">
+				<a  href="http://article.yeeyan.org/view/25987/389308" target="_blank"  ><img  style="border:none;width:230px;"    src="http://static.yeeyan.org/upload/image/2013/12/05/13862182387.jpg"/></a> 
+			</div>
+							<div class="sa_hotarticles">
+				<a  href="http://article.yeeyan.org/view/199302/389992" target="_blank"  ><img  style="border:none;width:230px;"    src="http://static.yeeyan.org/upload/image/2013/12/09/13865769461.png"/></a> 
+			</div>
+					<div class="sa_hotarticles">
+				<div class="sa_right_title_b">相关热门</div>
+								<ul>
+					 
+					<li><a target="_blank" title="【今日图解】发达国家房地产市场估值分析" href="http://select.yeeyan.org/view/102595/388470">【今日图解】发达国家房地产市场估值分析 </a> </li>
+                      			 
+					<li><a target="_blank" title="KAL漫画：终点在哪（20131130）| 经济学人" href="http://select.yeeyan.org/view/263766/388487">KAL漫画：终点在哪（20131130）| 经济学人 </a> </li>
+                      			 
+					<li><a target="_blank" title="克鲁格曼：扩大社会保障" href="http://select.yeeyan.org/view/100667/388250">克鲁格曼：扩大社会保障 </a> </li>
+                      			 
+					<li><a target="_blank" title="保罗•克鲁格曼的认识盲点" href="http://select.yeeyan.org/view/100667/387932">保罗•克鲁格曼的认识盲点 </a> </li>
+                      			 
+					<li><a target="_blank" title="【布鲁金斯学会】中国经济再平衡：东亚经济历史的启示" href="http://select.yeeyan.org/view/236588/386276">【布鲁金斯学会】中国经济再平衡：东亚经济历史的启示 </a> </li>
+                      			 
+					<li><a target="_blank" title="我们受够了！——低薪者的反抗" href="http://select.yeeyan.org/view/395795/381137">我们受够了！——低薪者的反抗 </a> </li>
+                      			 
+					<li><a target="_blank" title="怎样回答三个最棘手的面试问题" href="http://select.yeeyan.org/view/442798/385309">怎样回答三个最棘手的面试问题 </a> </li>
+                      			 
+					<li><a target="_blank" title="非公司型企业的崛起" href="http://select.yeeyan.org/view/444237/384408">非公司型企业的崛起 </a> </li>
+                      							</ul>
+			</div>
+			<div class="sa_hotarticles">
+				<div class="sa_right_title_b">最热头条</div>
+				<ul>
+					 
+					<li><a target="_blank" title="14张文学海报设计" href="http://select.yeeyan.org/view/437475/390130">14张文学海报设计 </a> </li>
+                      			 
+					<li><a target="_blank" title="2013年度十大好书" href="http://select.yeeyan.org/view/16342/390036">2013年度十大好书 </a> </li>
+                      			 
+					<li><a target="_blank" title="探秘平壤地铁" href="http://select.yeeyan.org/view/432993/390189">探秘平壤地铁 </a> </li>
+                      			 
+					<li><a target="_blank" title="纳尔逊·曼德拉：1918-2013 " href="http://select.yeeyan.org/view/103880/389681">纳尔逊·曼德拉：1918-2013  </a> </li>
+                      			 
+					<li><a target="_blank" title="唐顿淑女的20条餐桌准则" href="http://select.yeeyan.org/view/433002/389420">唐顿淑女的20条餐桌准则 </a> </li>
+                      			 
+					<li><a target="_blank" title="当统计学家不能预测未来" href="http://select.yeeyan.org/view/14748/388948">当统计学家不能预测未来 </a> </li>
+                      			 
+					<li><a target="_blank" title="【协作】26位女性和她们的堕胎故事" href="http://select.yeeyan.org/view/432646/388779">【协作】26位女性和她们的堕胎故事 </a> </li>
+                      			 
+					<li><a target="_blank" title="一杆大烟枪：从收藏到成瘾" href="http://select.yeeyan.org/view/424823/388770">一杆大烟枪：从收藏到成瘾 </a> </li>
+                      							</ul>
+			</div>
+			<div class="sa_hotarticles"> 
+			</div>
+		</div>
+	</div>
+
+<script>
+function sidebar() {
+	var boxtag = $("#sa_right").css("display");
+	if (boxtag == 'none') {
+		$("#sa_right").css("display", "block");
+		$(".sa_right_point").css("display", "block");
+		$(".sa_left_info").css("display", "none");
+		$("#sa_left").removeClass("closetag");
+		$(".sa_main").removeClass("fff_bgc");
+		$(".sa_bookmark").removeClass("sa_bookmark_right");
+		$(".sa_switch_open").removeClass("sa_switch_close");
+		$(".sa_title").removeClass("sa_title_pr");
+		$(".sa_switch_open a").html("关闭文章名片");
+	} else if (boxtag == 'block') {
+		$("#sa_right").css("display", "none");
+		$(".sa_right_point").css("display", "none");
+		$(".sa_left_info").css("display", "block");
+		$("#sa_left").addClass("closetag");
+		$(".sa_main").addClass("fff_bgc");
+		$(".sa_bookmark").addClass("sa_bookmark_right");
+		$(".sa_switch_open").addClass("sa_switch_close");
+		$(".sa_title").addClass("sa_title_pr");
+		$(".sa_switch_open a").html("打开文章名片");
+	};
+}
+sidebar();
+
+var delete_type;
+function show_botton_content(delete_type, cid){
+	if (delete_type == 'deletecomment') {
+			str = '<span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">取消</a></span>  <span><a class="btn blue_btn"  href="javascript:void(0)" onclick="deletecomment(' + cid + ')">确定</a></span>'
+			$("#showalerwindow_content").html('你确定要删除评论吗？');
+		}else{
+			str = '<span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">确定</a></span>'
+		}
+		 document.getElementById("show_botton").innerHTML =str;
+}
+function show_alertwin(text, cid){
+	var w_width = ($(window).width() - 350)/2;
+	var w_height = $(document).scrollTop() + ($(window).height() - 250)/2;
+	$(".change_box").css('left',w_width);
+	$(".change_box").css('top',w_height);
+	$(".change_box_bg").show();
+	$(".change_box_bg").css('height', $(document.body).height());
+	$(".change_box_bg").css('width', $(window).width());
+	$("#showalerwindow_content").html(text);
+	delete_type = text;
+	show_botton_content(delete_type, cid);
+}
+function hidden_change_box(){
+	$(".change_box_bg").css('display', 'none');
+	return false;
+}
+function favorate(tid){
+			var islogin=false;
+		if(islogin){
+		$.post('/translation_favor', {tid: tid} ); 
+        show_alertwin('收藏成功','');
+		$(".favorite").addClass("success");
+	}else{
+		window.location.href="http://www.yeeyan.org/login";
+	}
+}
+function up(tid) {
+			var islogin=false;
+		if(islogin){
+		$.post('/translation_up', {tid: tid}, function(data) {
+			if(data=='true'){
+				var up_count=document.getElementById('up_count').innerHTML.replace(/(^\s+)|(\s+$)/g, "");
+				up_count=parseInt(up_count,10)+1;
+				document.getElementById('up_count').innerHTML=up_count;
+				document.getElementById('up_count_1').innerHTML=up_count;
+			}else{
+				show_alertwin('这篇您已赞过了，可以去支持其它好文章。','');
+			}
+		});
+	}else{
+				window.location.href="http://www.yeeyan.org/login";
+	}
+}
+
+function showCommentArea(id,atname)
+{
+	var has_sub_comment = $('#cl_'+id+' .sub_comment').attr('class');
+	
+	$('.sa_comment_list').find('.info_sheet').remove();
+
+	if (has_sub_comment == undefined){
+		$('#cl_'+id+'').append('<div class="sub_comment"></div>');
+	} else {
+		$('#cl_'+id+' ul.info_sheet').remove();
+	}
+	
+	$('#cl_'+id+' .sub_comment').append(comment_var);
+
+	$('#comment_pid').val(id);
+	if(atname!=''){
+		$("#mycomment").val('@'+atname+'：');
+	}
+}
+
+function cancelCommentArea(){
+	$('.sa_comment_list').find('.info_sheet').remove();
+	$('.sa_comment_list').append(comment_var);
+}
+
+function vote(cid,type) {
+ $.post('/comment_vote', {cid: cid,type: type}, function(data) {
+	 if (data == 'true'){
+		var count=$("#vote_"+type+"_"+cid).html();
+		count=parseInt(count,10)+1;
+		$("#vote_"+type+"_"+cid).html(count);
+	 } else {
+		show_alertwin('您已经投票过了。','');
+	 }
+ });
+}
+
+
+function followed(obj,uid){
+	obj.onclick=function(){return false;}
+	obj.id="foll"+uid;
+	var tmpid="#foll"+uid;
+	$(tmpid).fadeOut();
+	$.post("/followed", {uid:uid},
+		function(data){
+		 	return false;
+		});
+}
+</script>
+
+            
+	<div class="s_footer">
+                <p>
+                    Copyright © 2013 yeeyan.org
+                </p>
+                <p>
+                    北京译言协力传媒科技有限公司
+                </p>
+                <p>
+                    京ICP证10000013号 京公网安备11010802009636号
+                </p>
+            </div>
+        </div>
+    </body>
+<script type="text/javascript">
+var ga_location=window.location.href;
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15813666-6']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'yodao', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_setDomainName', '.yeeyan.org']);
+_gaq.push(['_trackPageview', ga_location]);
+
+(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})();
+</script>
+</html><div class="change_box_bg">
+    <div class="change_box">
+    	<div class="title"><a class="hidden_change_box" onclick="hidden_change_box()" href="javascript:void(0)">×</a>提示</div>
+    	<p id="showalerwindow_content">您已经赞过此文了。</p>
+    	<p id="show_botton" class="b"><span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">确定</a></span></p> 
+    </div>
+</div>

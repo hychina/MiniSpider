@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<head>
+<link rel="icon" type="image/x-icon" href="http://static.yeeyan.org/images/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>译言网 | 新型电脑病毒通过空气'偷偷泄露数据'</title>
+<meta name="description" content="安全研究人员已经研发出恶意程序，它可以从一台计算机捕获机密数据并劫持声卡把数据传播到附近的一台机器上，而人类根本听不到这种高频声波"/>
+<meta name="keywords" content=""/>
+<meta name="author" content="译言" />
+<meta property="qc:admins" content="13002727051166727" />
+<meta name="wumiiVerification" content="5f1eb70e-f70c-4a30-a887-dae826908636" />
+<link rel="apple-touch-icon" href="http://static.yeeyan.org/upload/image/2013/11/25/13853449839.png"/> 
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="http://static.yeeyan.org/css/yeeyan2012.css?7" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="http://static.yeeyan.org/css/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="http://static.yeeyan.org/css/fontdiao.css" />
+
+<!--[if IE 7]>
+  <link rel="stylesheet" href="http://static.yeeyan.org/css/font-awesome-ie7.min.css">
+<![endif]-->
+<!-- <script type="text/javascript" src="http://static.yeeyan.org/js/jquery-1.3.2.min.js"></script> -->
+
+<script type="text/javascript" src="http://static.yeeyan.org/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+	<div class="y_header">
+		<div class="width">
+			<div class="content clearfix">
+				<div class="y_logo"><a href="http://www.yeeyan.org"><img  src="http://static.yeeyan.org/images/g_t_logo.png"></a></div>
+				<ul class="menu">
+					<li><a href="http://www.yeeyan.org">译言</a></li>
+					<li><a target="_blank" href="http://select.yeeyan.org">精选</a></li>
+					<li><a target="_blank"  href="http://g.yeeyan.org">图书</a></li>
+					<li><a target="_blank"  href="http://coursera.yeeyan.org">译言×Coursera</a></li>
+					<li><a target="_blank"  href="http://business.yeeyan.org/welcome">翻译服务</a></li>
+				</ul> 
+				<ul class="info"> 
+									<li><a href="http://www.yeeyan.org/login">登录</a></li>
+					<li style="padding-right:5px;"><a href="http://www.yeeyan.org/register">注册</a></li>
+								</ul> 
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="content clearfix">
+				<ul class="menu clearfix">
+					<li id="ysite"><a href="http://www.yeeyan.org">首页</a></li>
+					<li id="ygroup"><a href="http://group.yeeyan.org">小组</a></li>
+					<li id="yarticle"><a href="http://article.yeeyan.org">译文库</a></li>
+					<li id="ysource"><a href="http://source.yeeyan.org">原文库</a></li>
+				</ul>
+<script>
+function setting_show(){
+	if(document.getElementById('setting_show_list').style.display!='none'){
+		document.getElementById('setting_show_list').style.display='none';
+	}else{
+		document.getElementById('setting_show_list').style.display='block';
+	}
+}
+document.onmouseup = function(event){
+	event =  window.event || event;
+	var click_obj = document.elementFromPoint(event.clientX, event.clientY); 
+	if(check_parent(click_obj,document.getElementById("setting_show_list")) == false && check_parent(click_obj,document.getElementById("setting_show_btn")) == false ){ 
+		if (document.getElementById('setting_show_list')){
+			document.getElementById('setting_show_list').style.display='none';
+		}
+	}
+}
+function check_parent(obj,pobj){
+	while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY' && obj.tagName.toUpperCase() != 'HTML' ){       
+		if (obj == pobj){
+			return true;
+		}else{
+			obj = obj.parentNode;
+		}
+	}
+	return false;
+}
+var locationhref=window.location.href;
+var hashparam=locationhref.split('/');
+var args=new Array();
+if(hashparam.length>1){
+	var args=hashparam[2].split('.');
+}
+if( args[0]  == "group"){
+	document.getElementById("ygroup").className="active";
+}else if( args[0]  == "article"){
+	document.getElementById("yarticle").className="active";
+}else if( args[0]  == "source"){
+	document.getElementById("ysource").className="active";
+}else{
+	document.getElementById("ysite").className="active";
+}
+
+function yeeyan_search(){
+	var url='http://www.yeeyan.org/index/search/';
+	var keys = document.getElementById('keys').value;
+	if(keys!=''){
+		window.location.href=url+encodeURI(keys);
+	}
+}
+function bindEnter(event) {
+	if (event.keyCode == 13) {
+		yeeyan_search();
+		event.returnValue = false;
+	}
+}
+</script>
+				<div class="y_search">
+					<input class="l" type="text" value="" placeholder="文章、用户、小组"  id="keys"  onkeydown="bindEnter(event)"  />
+					<input class="r" type="button" value="" title="搜索" onclick="yeeyan_search();"   />
+				</div>
+			</div>
+		</div>
+	</div>
+<style>.y_s_content blockquote{display:block;background:#f6f6f6;color:#666;padding:1em;margin:14px 0;}</style>
+<script>
+function go_to_comment(){
+	var height_comment =document.getElementById('comment').offsetTop;
+	$("html, body").animate({ scrollTop: height_comment }, 200);
+	$('#comment_content').focus();
+}
+function go_to_backtop(){
+	$("html, body").animate({ scrollTop:0 },200);
+}
+
+$(function(){
+	function keep_backup_btn(){
+		if(document.documentElement.scrollTop){
+			var scrollY=document.documentElement.scrollTop; 
+		}else{
+			var scrollY=document.body.scrollTop; 
+		}
+		if (scrollY > 500) {
+			$('.y_go_to_backtop').show(); 
+		}else{
+			$('.y_go_to_backtop').hide(); 
+		}
+		var y_article_bottom = document.getElementById("y_article_bottom").offsetTop;
+		if (scrollY > y_article_bottom){
+			$('#articl_operation').css({'position':'fixed', 'top':'0px', 'width':'320px'});
+		}else{
+			$('#articl_operation').css({'position':'', 'top':''});
+		}
+
+	}
+	if(/msie/i.test(navigator.userAgent)){
+	    window.attachEvent("onscroll", function(){ keep_backup_btn();});
+	}else{
+	    window.addEventListener("scroll", function(){ keep_backup_btn();}, false);
+	}
+});
+</script>
+<div class="change_box_bg"><div class="change_box">
+	<div class="title"><a class="hidden_change_box" onclick="hidden_change_box()" href="javascript:void(0)">×</a>提示</div>
+	<p id="showalerwindow_content">您已经赞过此文了。</p>
+	<p id="show_botton" class="b"><span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">确定</a></span></p>
+</div></div>
+<div class="y_main fbg clearfix">
+		<div class="y_go_to_backtop"><a style="left:530px" title="返回顶部" href="javascript:void(0)" onclick="go_to_backtop()"></a> </div>
+		<div class="y_l no_border">
+			<h1 style="padding:15px 90px 5px 20px">新型电脑病毒通过空气'偷偷泄露数据'</h1>
+			<div class="y_s_author y_article_l_author">
+				<span>译者：<a href="http://user.yeeyan.org/u/111988"> 胡小琼</a></span>
+				<span>原作者：By Matthew Sparkes</span>			</div>
+			<div class="y_s_author y_article_l_author">
+				<span>发表时间：2013-12-16</span><span>浏览量：36</span><span>评论数：0</span><span>挑错数：0</span>
+			</div>
+					
+			<div class="y_article_abstract">
+				安全研究人员已经研发出恶意程序，它可以从一台计算机捕获机密数据并劫持声卡把数据传播到附近的一台机器上，而人类根本听不到这种高频声波			</div>
+			<div class="y_article_content clearfix">&nbsp;
+<p>
+	<span>安全研究人员已经研发出一款可以从一台计算机捕获击键次数并可以劫持声卡把数据传播到附近机器上的恶意程序，因为人类听不见这种高频声波。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>在极为高度安全的环境中，通常的做法是在包含敏感信息的计算机和其它被连接到互联网的计算机之间创建</span><span style="font-family:'Arial','sans-serif';"> </span><span>“空气间隙”以防止远程恶意攻击。这项研究证明，使用计算机扬声器和麦克风来弥合这一间隙并把敏感信息发送回远程攻击者，这是有可能做到的事情，但是程序设计者们警告说这种做法</span><span style="font-family:'Arial','sans-serif';"> </span><span>“对计算机的安全会产生相当大的威胁”。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>德国弗劳恩霍夫通信、信息处理和人类工程学研究所对这种攻击进行了概念验证，研究人员能够使用计算机的内置扬声器和麦克风在距离</span><span style="font-family:'Arial','sans-serif';">20</span><span>米左右的范围里以每秒</span><span style="font-family:'Arial','sans-serif';">20</span><span style="color:#434343;">比特</span><span>的速度来传输密码和其它数据，允许这款恶意软件“偷偷把重要数据泄漏给外面的世界”。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>“如果我们想严格地利用一个硬化和测试类型的计算系统或这种类型的计算系统的网络，我们必须有新的突破，”研究论文说。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>在安全计划方面，人们往往会忽略扬声器和麦克风，而利用人类听觉范围以外的频率有可能让如此这类的信息逃避检测，甚至当它们穿过一间坐满职员的办公室时信息都可能检测不到。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>巧妙的是，该论文并没有把研究停止在把音频从一台计算机传输到另一台的结果上，而是要让个人电脑尽可能多地感染病毒，并尽量创造一个网状网络使多跳通信成为可能。利用这种方式，受害者的机器和通过互联网将数据发送回给攻击者的计算机可以不必在彼此可听见的范围内。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>研究人员利用专为水下通信设计的现有的通信协议作为在互联网上用于传输数据的相对复杂的</span><span style="font-family:'Arial','sans-serif';">TCP/ IP</span><span>协议栈，但根据<span class="def2"><span style="color:#434343;">隐含</span></span>内容的附加部分</span><b><span style="line-height:150%;color:#434343;font-size:10.5pt;">，</span></b><span>管理</span>成<span class="def2"><span style="color:#434343;">本</span></span><span>太大。因为电磁波被海水高度吸收，所以就声学上来说使用水下应用程序发送和接收数据是很常见的方法。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>实验使用了五台联想</span><span style="font-family:'Arial','sans-serif';">T400</span><span>笔记本电脑运行</span><span style="font-family:'Arial','sans-serif';">Debian7.1</span><span>，并在标准的没有特别异常音频特性的计算机实验室中进行。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>传播速度大约在</span><span style="font-family:'Arial','sans-serif';">20</span><span>千赫，结果发现在实验过程中人类完全听不见任何声音。该文暗示此频率甚至可以更高，甚至有可能更不容易被检测到，但是，这样可能会缩小传播范围。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>在实验中，研究人员能够暗地里记录用户在一台计算机上的击键次数并通过一系列其它计算机的音频把它们传播出去，直到该信息最终被传递到一台联网的机器上，并发送回一个恶意攻击者。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>“除了击键信息，它也有可能转发其它安全关键数据，比如私人密钥或小型文本文件，里面有那些从被感染的受害者到隐蔽网络的分类信息，”研究人员说。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>“这个数据可以定期被发送出来，可以把从主机里提取的数据尽可能最大化，而且当计算系统被随身携带时，它也可以被传播到不同的环境里”。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>“我们已经证明，利用</span>常用商务笔记本电脑的设置<span>在空中建立隐蔽声学网状网络是可行。”</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p>
+<p>
+	<span>研究人员在自然环境下发现了那种可以填补空隙的恶意程序的例子，比如</span><span style="font-family:'Arial','sans-serif';">Flame</span><span>，它利用蓝牙从附近的设备上下载联系信息。</span><span style="font-family:'Arial','sans-serif';">2012</span><span>年这种病毒在伊朗被首次发现，当时机器似乎在不成比例地感染这种病毒，其结果导致了华盛顿邮报声称的一个故事，即为了减缓伊朗的核武器研究速度，它就是被国家安全局和中央情报局研发出来的一种病毒。</span><span style="font-family:'Arial','sans-serif';"></span> 
+</p></div>
+<script>$(".y_s_content a").attr('target', '_blank');</script>
+			<div class="y_article_tag clearfix">
+				<ul>
+					<li class="f">频道：</li>
+					<li><a href="/lists/tech">科技</a></li>
+				</ul>
+					</div>
+						<div style="padding:0 0 0 20px;margin:0;">
+				<div><span style="float:left;padding-left:10px;font-weight:bold;"> 相关译文</span><span onclick="window.open('http://www.wumii.com/widget/relatedItems')" style="color:#999;cursor:pointer;float:right;padding-right:40px;font-size:12px;">来自无觅插件</span> </div>
+				
+					<style>
+					.wumii-hook .wumii-related-items-div .wumii-footer {display:none;} 
+					.wumii-hook .wumii-related-items-div .wumii-internal .wumii-widget-title{display:none;}
+					</style>
+					<script type="text/javascript" id="wumiiRelatedItems">
+						var wumiiPermaLink = 'http://article.yeeyan.org/view/111988/390917';
+						var wumiiTitle = "新型电脑病毒通过空气'偷偷泄露数据'";
+						var wumiiTags = "";
+						var wumiiSitePrefix = "http://article.yeeyan.org/";
+						var wumiiParams = "&num=10&mode=1&pf=JAVASCRIPT";
+						var js_wumii = document.createElement('script'); 
+						js_wumii.type = 'text/javascript'; 
+						js_wumii.async = true;
+						js_wumii.src = 'http://widget.wumii.com/ext/relatedItemsWidget.htm';
+						var wupos = document.getElementsByTagName('script')[0];
+						wupos.parentNode.insertBefore(js_wumii, wupos);
+					</script> 
+			</div>
+			 
+<script> 
+var delete_type;
+function show_botton_content(delete_type, cid){
+	if (delete_type == 'deletecomment') {
+			str = '<span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">取消</a></span>  <span><a class="btn blue_btn"  href="javascript:void(0)" onclick="deletecomment(' + cid + ')">确定</a></span>'
+			$("#showalerwindow_content").html('你确定要删除评论吗？');
+		}else{
+			str = '<span><a class="hidden_change_box btn_slide" onclick="hidden_change_box()" href="javascript:void(0)">确定</a></span>'
+		}
+		 document.getElementById("show_botton").innerHTML =str;
+}
+function show_alertwin(text, cid){
+	var w_width = ($(window).width() - 350)/2;
+	var w_height = $(document).scrollTop() + ($(window).height() - 250)/2;
+	$(".change_box").css('left',w_width);
+	$(".change_box").css('top',w_height);
+	$(".change_box_bg").show();
+	$(".change_box_bg").css('height', $(document.body).height());
+	$(".change_box_bg").css('width', $(window).width());
+	$("#showalerwindow_content").html(text);
+	delete_type = text;
+	show_botton_content(delete_type, cid);
+}
+function hidden_change_box(){
+	$(".change_box_bg").css('display', 'none');
+	return false;
+}
+function up(tid,obj) {
+			var islogin=false;
+		if(islogin){
+		$.post('/translation_up', {tid: tid}, function(data) {
+			if(data=='true'){
+				var up_count=document.getElementById('up_count').innerHTML.replace(/(^\s+)|(\s+$)/g, "");
+				up_count=parseInt(up_count,10)+1;
+				document.getElementById('up_count').innerHTML=up_count;
+
+				
+			}else{
+				show_alertwin('这篇您已赞过了，可以去支持其它好文章。','');
+			}
+		});
+	}else{
+				window.location.href="http://www.yeeyan.org/login";
+	}
+}
+function tabshow(k){
+	$("#comment_0").hide();
+	$("#comment_1").hide();
+	$("#comment_"+k).show();
+	document.getElementById('comment_tab_0').className='';
+	document.getElementById('comment_tab_1').className='';
+	document.getElementById('comment_tab_'+k).className='l active';
+}
+function favorate(tid){
+			var islogin=false;
+		if(islogin){
+		var is_fav = $("#fav_button").find("i").attr("class");
+		if (is_fav == "icon-star") {
+			show_alertwin('您已经收藏过此文了','');
+		} else {
+			$.post('/translation_favor/', {tid: tid}, function(data) {});
+			$("#fav_button").find(".icon-star-empty").removeClass();
+			$("#fav_button").find("i").addClass("icon-star");
+		}
+	}else{
+		window.location.href="http://www.yeeyan.org/login";
+	}
+}
+function before_login(){
+	show_alertwin('请先 <a href="http://www.yeeyan.org/login">登录</a>，才能使用此功能','');
+}
+function reply(obj, cid){
+	var username=obj.parentNode.parentNode.parentNode.getElementsByTagName('a')[0].innerHTML;
+	go_to_comment();
+	document.getElementById('comment_content').value='@'+username+' ';
+	document.getElementById('reply_name').innerHTML='回复 <b>'+username+'&nbsp;&nbsp;<a href="javascript:void(0)" onclick="change_reply()">X</a><b>';
+	document.getElementById('comment_pid').value=cid;
+	$('#comment_content').focus();
+}
+function change_reply(){
+	document.getElementById('reply_name').innerHTML = '';
+	document.getElementById('comment_pid').value = '0';
+	document.getElementById('comment_content').value='';
+}
+function vote(cid,type) {
+ $.post('/comment_vote', {cid: cid,type: type}, function(data) {
+	 if (data == 'true'){
+		var count=$("#vote_"+type+"_"+cid).html();
+		count=parseInt(count,10)+1;
+		$("#vote_"+type+"_"+cid).html(count);
+	 } else {
+		show_alertwin('您已经投票过了。','');
+	 }
+ });
+}
+function deletecomment(cid){
+	window.location.href='?op=delcomment&id='+cid
+}
+</script>
+<script>
+document.onmousedown = function(event){
+	event =  window.event || event; 
+	var click_obj = document.elementFromPoint(event.clientX, event.clientY); 
+	if(is_his_parent(click_obj,document.getElementById("sharelist")) == false && is_his_parent(click_obj,document.getElementById("sharebtn")) == false ){ 
+		document.getElementById('sharelist').style.display='none'; 
+	}
+}
+function is_his_parent(obj,pobj){
+	while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY' && obj.tagName.toUpperCase() != 'HTML' ){       
+		if (obj == pobj){
+			return true;
+		}else{
+			obj = obj.parentNode;
+		}
+	}
+	return false;
+}
+</script>
+			<div class="y_article_comment">
+
+				<div class="clearfix">
+				<div id="comment_0">
+							</div>
+<style>
+.nologin_btn {
+    background-color: #019AD2;
+    background-image: -moz-linear-gradient(#eeeeee, #cccccc);
+    background-image: -webkit-linear-gradient(#eeeeee, #cccccc);
+    color: #FFFFFF;
+    border: 1px solid #dddddd;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.nologin_btn:hover {
+    background-color: #0271BF;
+    background-image: -moz-linear-gradient(#eeeeee, #cccccc);
+    background-image: -webkit-linear-gradient(#eeeeee, #cccccc);
+    background-repeat: repeat-x;
+    border-color: #dddddd;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+</style>
+					<div  id="comment" class="login">您没有登录，不能发表评论，请 <a href="http://www.yeeyan.org/login">登录</a></div>
+					<div class="l_box n clearfix">
+											<div class="img">评论：</div>
+											<div class="r">
+												<div class="txt clearfix">
+		<form action="http://article.yeeyan.org/docomment" method="POST"  name="comment_frm">
+								<textarea name="data[Comment][content]" id="comment_content" rows="7"   disabled="disabled" readonly="readonly"   ></textarea>
+													  </div>
+							<div><a href="javascript:void(0)"    class="btn btn_r btn_s nologin_btn"  >发表评论</a></div>
+		</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<script>
+$(".l_box").mouseover(function(){
+	$(this).find(".del_reply").show();
+});
+$(".l_box").mouseout(function(){
+	$(this).find(".del_reply").hide();
+});
+
+
+function login(){
+	window.location.href='http://www.yeeyan.org/login';
+}
+function dosubmit(obj){
+	var content = document.getElementById('comment_content').value.replace(/<[^>]+>/g, "");
+	if(content!=''){
+		obj.onclick=function(){return false;}
+		document.comment_frm.submit();
+	}
+}
+</script>
+		<div class="y_r no_border full_r">
+			<div id="articl_operation">
+				<ul class="y_articles_up clearfix">
+					<li class="up" onclick="up(390917,this);"><a href="javascript:void(0);"> <i class="icon-thumbs-up"></i><span id="up_count">0</span></a></li>
+											<li id="no_up_users" style="font-size:12px;color:#898989;padding-top:8px;">还没有人赞过这篇文章</li>
+									</ul>
+				<div class="first_win" style="display:none;">双语对照在这里啦<div class="triangle"></div></div>
+				<ul class="y_articles_operation clearfix">
+					<li id="show_first_win" class="first"><a target="_blank" href="/compare/390917"><i class="icon-paper-clip"></i> 挑错</a></li>
+					<li><a href="javascript:void(0)" onclick="go_to_comment()"><i class="icon-comments"></i> 评论</a></li>
+					<li id="fav_button"><a href="javascript:void(0)"  onclick="favorate(390917)"   ><i class="icon-star-empty"></i> 收藏</a></li>
+					<li id="sharebtn" class="noline"><a href="javascript:void(0)" onclick="$('#sharelist').toggle();"><i class="icon-share"></i> 分享</a></li>
+					<ul class="y_show_share y_blue_txt" id="sharelist" style="display:none;">
+						<li class="s_weibo"><a href="javascript:void(0)" onclick="window.open('http://v.t.sina.com.cn/share/share.php?url='+encodeURI(document.location)+'&title='+encodeURI('新型电脑病毒通过空气'偷偷泄露数据' @译言 ') , 'newwindow', 'height=330,width=550,top=' + (screen.height - 280) / 2 + ',left=' + (screen.width - 550) / 2 + ', toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no')" >新浪微博</a></li>
+						<li class="s_qq"><a  href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://v.t.qq.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey='].join('');function a(){if(!window.open([f,p].join(''),'mb', ['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width- 620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');}; if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}}) (screen,document,encodeURIComponent));">腾讯微博</a></li>
+						<li class="s_renren"><a href="javascript:void(0)" onclick="window.open('http://www.connect.renren.com/share/sharer?url='+encodeURI(document.location)+'&title='+encodeURI(document.title), 'newwindow', 'height=330,width=550,top=' + (screen.height - 280) / 2 + ',left=' + (screen.width - 550) / 2 + ', toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no')">人人网</a></li>
+						<li class="s_douban"><a href="javascript:void(0)"  onclick="window.open('http://www.douban.com/recommend/?url='+encodeURI(document.location)+'&title='+encodeURI(document.title)+'&v=1', 'newwindow', 'height=330,width=550,top=' + (screen.height - 280) / 2 + ',left=' + (screen.width - 550) / 2 + ', toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no');" >豆瓣网</a></li>
+					</ul>
+				</ul>
+
+								
+			</div>
+			<div class="y_s_box y_article_rbox">
+								<div class="title">来自小组</div>
+				<div class="l_s_box clearfix">
+					<div class="img_80"><a href="http://group.yeeyan.org/rejoice51"><img src="http://static.yeeyan.org//upload/image/2013/11/0512244481952.jpg"  /></a></div>
+					<div class="r_80">
+						<div class="t"><a href="http://group.yeeyan.org/rejoice51">BBC NEWS</a></div>
+						<div class="txt" style="overflow: hidden; height: 56px;">BBC头条新闻</div>
+					</div>
+				</div>
+								<div class="title">译者信息</div>
+				<div class="l_s_box clearfix">
+					<div class="img"><a href="http://user.yeeyan.org/u/111988"><img  style="width:50px;height:50px;"  src="http://static.yeeyan.org/icon/111988.jpg" /></a></div>
+					<div class="r">
+						<div class="t">
+														<a href="http://user.yeeyan.org/u/111988">胡小琼</a></div>
+						<div class="txt" style="margin-top:3px;"></div>
+					</div>
+				</div>
+							</div>
+	
+<script>
+$("#show_first_win a").mouseenter(function(){
+	$(".first_win").fadeTo(300,1);
+});
+$("#show_first_win a").mouseleave(function(){
+	$(".first_win").fadeTo(100,0);
+});
+function followed(obj,uid){
+	if(obj.innerHTML.replace(/(^\s+)|(\s+$)/g, "")=='关注'){
+		obj.innerHTML='取消关注';
+		obj.style.color='#999';
+	}else{
+		obj.innerHTML='关注';
+		obj.style.color='#0088CC';
+	}
+	$.post("/followed", {uid:uid},
+		function(data){
+		 	 
+		});
+}
+</script>
+
+			<div class="y_article_rbox" style="background:none;margin-top:0;"> 
+				<div  class="y_article_copyright" style="margin-top:0;">
+					<div class="content"> 
+						<ul style="white-space: normal;">
+														<li>原文标题：<a  target="_blank" class="sa_blue"  href="http://source.yeeyan.org/view/501723_c3a">New computer virus 'secretly leaks data' through air</a></li> 
+							<li>原文作者：By Matthew Sparkes</li>
+							<li>原文来源：<a target="_blank" href="http://www.telegraph.co.uk/technology/internet-security/10490846/New-computer-virus-secretly-leaks-data-through-air.html" class="sa_blue">telegraph.co.uk</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+						<div class="y_s_box" style="padding-bottom:0;overflow:hidden;">
+				<a  href="http://article.yeeyan.org/view/25987/389308" target="_blank"  ><img  style="border:none;width:328px;"   src="http://static.yeeyan.org/upload/image/2013/12/05/13862182387.jpg"/></a> 
+			</div>
+										<div class="y_s_box" style="padding-bottom:0;overflow:hidden;">
+					<a  href="http://article.yeeyan.org/view/199302/389992" target="_blank"  ><img  style="border:none;width:328px;"   src="http://static.yeeyan.org/upload/image/2013/12/09/13865769461.png"/></a> 
+				</div>
+			
+			<div class="y_article_rbox" style="background-image:none;margin-top:0;padding-top:0;"> 
+				<div class="y_article_copyright" style="background-image:none;">
+					<div class="content">
+						<span>版权声明：</span><br>
+						本译文仅用于学习和交流目的。<br>非商业转载请注明译者、出处，并保留文章在译言的完整链接。 
+					</div>
+				</div>
+			</div>
+			<div  id="y_article_bottom" ></div>
+		</div>
+	</div>
+	<div class="y_footer y_grey clearfix">
+		<div class="y_footer_line" id="y_footer_line"></div>
+		<ul class="l">
+			<li>Copyright &copy; 2012 yeeyan.org&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/terms">服务条款</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/privacy">隐私政策</a></li>
+			<li>北京译言协力传媒科技有限公司</li>
+			<li>京ICP证10000013号&nbsp;&nbsp;京公网安备11010802009636号</li>
+		</ul>
+		<ul class="r">
+			<li><a target="_blank"  href="http://www.yeeyan.org/main/index">旧版回顾</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank"  href="http://e.weibo.com/yeeyan">官方微博</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/rss">RSS 订阅</a></li>
+			<li><a href="http://www.yeeyan.org/aboutus">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/joinus">加入我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/contactus">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.yeeyan.org/suggest">意见反馈</a></li>
+      <script src="http://www.anquan.org/static/outer/js/anquan_authen_83x30.js"></script>     
+        </ul>
+	</div>
+
+<script type="text/javascript">
+var yeeyan_track=window.location.href;
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15813666-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'yodao', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_setDomainName', '.yeeyan.org']);
+_gaq.push(['_trackPageview', yeeyan_track]);
+
+(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})();
+</script>
+</body>
+</html>
