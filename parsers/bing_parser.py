@@ -1,12 +1,14 @@
 from logger import log
 from bs4 import BeautifulSoup
-from decorators import get_thread_name
 import re
+
+def get_parser():
+    return BingParser()
 
 class BingParser():
     def __init__(self):
         self.url_pattern = \
-            re.compile(r"(http://cn.bing.com/dict/service\?q=.*?&offset=)([0-9]+)(&dtype=sen&mkt=zh-CN&setlang=ZH)")
+            re.compile(r"(http://cn.bing.com/dict/service/\?q=.*?&offset=)([0-9]+)(&dtype=sen&mkt=zh-CN&setlang=ZH)")
         self.next_page_offset_pattern = \
             re.compile(r"BilingualAjax\.pageSen\('.*?','([0-9]+)'\)")
         self.name = 'bing'
@@ -40,25 +42,24 @@ class BingParser():
 
             en = ''.join([s for s in en_div.strings]).strip()
             cn = ''.join([s for s in cn_div.strings]).strip()
-            self.database.insert(thread_name=self.name, table='sentences', values=(en, cn))
+            self.database.insert(table='sentences', values=(en, cn))
 
             try:
                 url = url_div.a['href']
             except Exception:
                 pass
             else:
-                self.database.insert(thread_name=self.name, table='source_urls', values=(url,))
+                self.database.insert(table='source_urls', values=(url,))
         return len(sentence_divs)
 
-    @get_thread_name
     def parse(self, url, html_page):
         dom_tree = BeautifulSoup(html_page)
         try:
             num_sentences = self.extract_sentences(dom_tree)
         except AttributeError as e:
             log(self.name, u'no sentences found in {} ...'.format(url))
-        else:
-            log(self.name, u'{} sentence(s) found in {} ...'.format(num_sentences, url))
+        # else:
+            # log(self.name, u'{} sentence(s) found in {} ...'.format(num_sentences, url))
 
         new_urls = None
         try:
@@ -67,16 +68,11 @@ class BingParser():
             pass
 
         if new_urls is not None:
-            log(self.name, u'{} new url(s) extracted in {} ...'.format(len(new_urls), url))
+            # log(self.name, u'{} new url(s) extracted in {} ...'.format(len(new_urls), url))
             for new_url in new_urls:
-                self.database.insert(thread_name=self.name, table='extracted_urls', values=(new_url,))
-        else:
-            log(self.name, u'no url(s) extracted in {} ...'.format(url))
+                self.database.insert(table='extracted_urls', values=(new_url,))
+        # else:
+            # log(self.name, u'no url(s) extracted in {} ...'.format(url))
 
-        # data integrity: no commit before url is recorded
-        self.database.insert(thread_name=self.name, table='parsed_urls', values=(url,))
-        self.database.commit(thread_name=self.name)
+        self.database.insert(table='parsed_urls', values=(url,))
         return new_urls
-
-def get_parser():
-    return BingParser()

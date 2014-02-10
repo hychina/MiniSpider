@@ -1,1 +1,1 @@
-__all__ = ['guardian_parser']
+__all__ = ['bing_parser']

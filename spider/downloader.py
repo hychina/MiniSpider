@@ -20,17 +20,19 @@ class Downloader(threading.Thread):
 
         self.rejection_msg = spider_config.get('rejection_msg', None)
         self.max_retry = int(spider_config.get('max_retry', 5))
-        self.timeout = int(spider_config.get('timeout', 5))
+        self.timeout = int(spider_config.get('timeout', 10))
         self.fetch_interval = int(spider_config.get('fetch_interval', 1))
-        self.batch_size = int(spider_config.get('batch_size', 100))
-        self.batch_interval = int(spider_config.get('batch_interval', 100))
-        self.retry_interval = int(spider_config.get('retry_interval', 30))
+        self.retry_interval = int(spider_config.get('retry_interval', 1))
+        self.batch_interval = int(spider_config.get('batch_interval', 10))
+        self.batch_size = int(spider_config.get('batch_size', 1000))
 
         self.parser = parser
         self.urls = urls
         self.user_agents = user_agents
         self.database = database
-        self.url_opener = urllib2.build_opener(RedirectHandler)
+
+        proxy = urllib2.ProxyHandler({'http': 'adslspider04.web.zw.vm.sogou-op.org:8080'})
+        self.url_opener = urllib2.build_opener(proxy, RedirectHandler)
 
     def fetch(self, url):
         request = urllib2.Request(url.encode('utf-8'))
@@ -77,7 +79,7 @@ class Downloader(threading.Thread):
                     log(self.name, u'success:{0}'.format(url))
 
                     # feed to parser
-                    new_urls = self.parser.parse(url=url, html_page=html)
+                    new_urls = self.parser.parse(url, html)
                     if new_urls:
                         [self.urls.put(url) for url in new_urls]
 

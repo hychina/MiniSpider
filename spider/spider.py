@@ -6,28 +6,10 @@ from downloader import Downloader
 import re
 
 class Spider():
-    def __init__(self, spider_name, spider_config, parser, database):
-        log(spider_name, 'initializing ...')
-        self.spider_name = spider_name
-        self.database = database
-        self.user_agents = self.load_user_agents()
-        self.num_threads = int(spider_config.get('num_threads', 1))
-        self.urls = LifoQueue()
-
-        # 对 url 进行过滤
-        self.url_pattern = None
-        url_pattern = spider_config.get('url_pattern', '')
-        if url_pattern:
-            self.url_pattern = re.compile(url_pattern)
-
-        self.initialize_urls()
-        self.downloaders = [Downloader(spider_config=spider_config,
-                                       thread_name='{}{}'.format(self.spider_name, n),
-                                       urls=self.urls,
-                                       user_agents=self.user_agents,
-                                       parser=parser,
-                                       database=self.database)
-                            for n in xrange(self.num_threads)]
+    def load_user_agents(self):
+        with open('data/user_agents.txt', 'r') as file_:
+            user_agents = file_.read().strip().split('\n')
+        return user_agents
 
     def initialize_urls(self):
         start_urls_path = 'data/{}/start_urls'.format(self.spider_name)
@@ -52,10 +34,29 @@ class Spider():
 
         [self.urls.put(url) for url in urls]
 
-    def load_user_agents(self):
-        with open('data/user_agents.txt', 'r') as file_:
-            user_agents = file_.read().strip().split('\n')
-        return user_agents
+    def __init__(self, spider_name, spider_config, parser, database):
+        log(spider_name, 'initializing ...')
+
+        self.spider_name = spider_name
+        self.database = database
+        self.user_agents = self.load_user_agents()
+        self.num_threads = int(spider_config.get('num_threads', 5))
+        self.urls = LifoQueue()
+
+        # 对 url 进行过滤
+        self.url_pattern = None
+        url_pattern = spider_config.get('url_pattern', '')
+        if url_pattern:
+            self.url_pattern = re.compile(url_pattern)
+
+        self.initialize_urls()
+        self.downloaders = [Downloader(spider_config=spider_config,
+                                       thread_name='{}{}'.format(self.spider_name, n),
+                                       urls=self.urls,
+                                       user_agents=self.user_agents,
+                                       parser=parser,
+                                       database=self.database)
+                            for n in xrange(self.num_threads)]
 
     def run(self):
         for d in self.downloaders:
