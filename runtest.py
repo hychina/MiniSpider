@@ -1,0 +1,1 @@
+import test.test_news_parser
